@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+body{
+    margin: 0;
+    padding:0;
+    font-family: "ubuntu";
+    background: url("cssimg/mybg.jpg") no-repeat;    
+    background-size: auto 750px;
+    background-position-x: 907px;
+    background-position-y: 0px;
+    height: 100%;
+    width: 100%;
+}
+.img{
+    width: 45px;
+    height:45px;
+}
+.center{
+    display: grid;
+    grid-template-columns:1fr 500px;
+    width: 1280px;
+    margin:auto;
+    margin-top: 50px;
+    height:650px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.left h1{
+    font-size: 50px;
+}
+.left{
+    display: block;
+    padding: 20px;
+    background:white;
+}
+.right{
+    backdrop-filter:blur(10px);
+    background:rgb(0,0,0,0.1);
+    color:white;
+    padding:20px;
+}
+.txt{
+    margin-top:5px;
+    font-size: 23px;
+}
+.right button{
+    margin-top:30px;
+    width:100px;
+    height:30px;
+    background:rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+.txtfield{
+    padding-left: 5px;
+    margin:20px;
+    margin-left: 0;
+    width: 100%;
+    border:none;
+    outline: none;
+    border-radius: 10px;
+    background:rgb(231, 131, 142);
+    transition: all .5s;
+    height:40px;
+}
+.right h1{
+    margin-top:130px;
+    font-size: 45px;
+}
+.txtfield:hover{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.txtfield:focus{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.txtarea{
+    padding:10px;
+    position: relative;
+}
+.label{
+    top:38px;
+    left:15px;
+    transition: all .5s;
+}
+.a {
+    position: absolute;
+}
+.txtfield:focus ~ .label{
+    top:0;
+    color:black;
+}
+.txtfield:valid ~.label{
+    top:0;
+    color: black;
+}
+.signupform{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+.rbtngroup{
+    margin-top: 5px;
+    border:none;
+    transition: all .5s;
+}
+#mbtn{
+    border-radius:5px 0px 0px 5px;
+    margin-right:0;
+    background:rgb(255,255,255,0.5);
+    margin-left:20px;
+}
+#fbtn{
+    margin-left:0;
+    background:rgb(255,255,255,0.5);
+    border-radius:0px 5px 5px 0px;
+}
+.rbtn{
+    width: 130px;
+    height: 30px;
+}
+.bg{
+    background: url("cssimg/mybg.jpg") no-repeat; 
+}
+.submitbtn{
+    height:40px;
+    font-size: 20px;
+    font-weight: 100;
+    width: 150px;
+    transition: .5s all;
+    border:none;
+    border-radius: 5px;
+    background:rgb(231, 131, 142,0.5);
+}
+.submitbtn:hover{
+    background:rgb(232, 173, 180);
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.click{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}

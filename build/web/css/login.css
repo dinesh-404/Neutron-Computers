@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+body{
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+
+}
+.main{
+    display:grid;
+    grid-template-columns: 1fr 568px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top:0;
+    backdrop-filter: blur(15px);
+}
+.mright{
+    background: url("cssimg/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg") no-repeat;
+    background-position: 00px;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.mleft{
+    background: rgb(0,0,0,0.01);
+    width: 100%;
+    height: 100%;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    opacity: 90%;
+    top:15px;
+    left: 15px;
+}
+.center{
+    display:grid;
+    grid-template-columns:1fr 400px;
+    height:650px;
+    width:1200px; 
+    margin:auto;
+    margin-top: 50px;
+    color:white;
+    border-radius: 20px;
+    background: rgb(255,255,255,0.1);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.center .left{
+    color:black;
+    padding: 30px;
+    padding-top:100px;
+    background: white;
+    height: 100%;
+}   
+.txtfield{
+    width: 100%;
+    background:rgba(255, 217, 0, 0.5); 
+    height: 50px;
+    border-radius: 20px;
+    border:none;
+    padding-left: 10px;
+    font-size: 18px;
+    transition: all .7s;
+    outline: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.center .left .txtfield:focus{
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.a{
+    position:absolute;
+}
+.lbl{
+    top: 35px;
+    left:35px;
+    color:rgb(0,0,0,0.8);
+    transition: all .5s;
+}
+.r{
+    position: relative;
+}.txtfield:focus ~ .lbl{
+    top:0;
+    color:black;
+}
+.txtfield:valid ~.lbl{
+    top:0;
+    color: black;
+}
+.txtarea{
+    padding:20px;
+}
+
+.submitbtn{
+    width: 150px;
+    height: 50px;
+    background:rgb(253,212,103,0.6);
+    border-radius:40px;
+    margin-left: 300px;
+    border: none;
+    font-size: 19px;
+    transition: all .3s;
+}
+.submitbtn:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.right{
+    backdrop-filter: blur(5px);
+    background-position: center;
+    background-size: contain;
+    padding:100px 0px 15px 15px;
+    font-size: 20px;
+
+}
+.right h1{
+    margin-bottom: 50px;
+    text-shadow: rgb(0,0,0,0.5) 1px 0 5px;
+}
+.left h1{
+    font-size: 40px;
+    margin-left:160px;
+}
+.right button{
+    background:rgb(255,255,255,0.9);
+    width: 150px;
+    font-size: 20px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 50px;   
+    margin-left: 100px;
+    border: none;
+}
+.fields{
+    margin-top: 50px;
+}

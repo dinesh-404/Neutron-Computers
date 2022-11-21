@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.outline{
+    background:url("cssimg/pramod-tiwari-fLsL1wqmh5w-unsplash.jpg");
+    background-size: cover; 
+    background-position: center;
+    position: fixed;
+    height:100%;
+    width: 100%;
+}
+.in{
+    position: relative;
+}
+.center{
+    margin:auto;
+    overflow: hidden;
+    width: 90%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns:500px 1fr;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.left{
+    height:550px;
+    overflow: hidden;
+}
+.right{
+    background: rgb(255,255,255,0.12);
+    backdrop-filter:blur(5px);
+}
+.txtarea{
+    width: 400px;
+    margin: auto;
+}
+.tb{  
+    background: rgb(255,255,255,0.17);
+    margin: auto;
+    margin-bottom: 20px; 
+    backdrop-filter:blur(15px);
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 50px;  
+    outline:none;
+    border:none;
+}
+.lbl{
+    z-index: 5;
+    position: absolute;
+}
+.button{
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    transition: all .5s;
+}
+.button:hover{
+    background: rgb(255,255,255,0.2);
+    backdrop-filter:blur(50px);
+}

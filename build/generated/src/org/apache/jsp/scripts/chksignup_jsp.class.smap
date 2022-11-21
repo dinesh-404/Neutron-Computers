@@ -1,0 +1,12 @@
+SMAP
+chksignup_jsp.java
+JSP
+*S JSP
+*F
++ 0 chksignup.jsp
+scripts/chksignup.jsp
+*L
+5,2:45
+8,42:48
+49:90
+*E
