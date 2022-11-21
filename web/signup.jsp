@@ -73,8 +73,7 @@
         </div>
         <script src="javascript/validation.js">
             let m = document.getElementById("mbtn");
-            let
-            f = document.getElementById("fbtn");
+            let f = document.getElementById("fbtn");
         </script>
     </body>
 </html>

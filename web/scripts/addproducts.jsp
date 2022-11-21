@@ -19,7 +19,7 @@
             <div class="txtarea">
                 <label for="p" class="lbl">file</label>
                 <div class="tb"></div>
-                <input type="file" hidden name="fileinput" class="tb" id="finput" multiple="true" accept=".jpg"/><br/>
+                <input type="file" name="fileinput" class="tb" id="finput" multiple="true" accept=".jpg"/><br/>
             </div>
             <center><input class="tb button" type="submit"></center>
         </form>
