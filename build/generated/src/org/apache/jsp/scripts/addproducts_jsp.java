@@ -62,7 +62,7 @@ public final class addproducts_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"txtarea\">\n");
       out.write("                <label for=\"p\" class=\"lbl\">file</label>\n");
       out.write("                <div class=\"tb\"></div>\n");
-      out.write("                <input type=\"file\" hidden name=\"fileinput\" class=\"tb\" id=\"finput\" multiple=\"true\" accept=\".jpg\"/><br/>\n");
+      out.write("                <input type=\"file\" name=\"fileinput\" class=\"tb\" id=\"finput\" multiple=\"true\" accept=\".jpg\"/><br/>\n");
       out.write("            </div>\n");
       out.write("            <center><input class=\"tb button\" type=\"submit\"></center>\n");
       out.write("        </form>\n");
