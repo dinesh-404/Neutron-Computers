@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
@@ -47,7 +48,10 @@
         }
 
         .right {
-            background: black;
+            background: gray;
+        }
+        .name{
+            font-size: 50px;
         }
     </style>
 </head>
@@ -63,19 +67,23 @@
                 <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40906.jpg" onclick="change(4)" class="sideimg" alt="">
             </div>
 
-            <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" alt=""></div>
+            <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg"
+                    alt=""></div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+            <h1 class="name">Nvdia RTX 4090</h1>
+        </div>
     </div>
     <script>
         let img = document.getElementsByClassName("sideimg");
         let mainimg = document.getElementById("mainimg");
         let temp = "";
-        function change(n){
+        function change(n) {
             temp = img[n].src;
-            img[n].src= mainimg.src;
+            img[n].src = mainimg.src;
             mainimg.src = temp;
         }
     </script>
 </body>
+
 </html>
