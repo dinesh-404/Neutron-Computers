@@ -13,9 +13,13 @@
     <title>JSP Page</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap');
 
         body {
-            font-family: "Ubuntu";
+            /* font-family: "Ubuntu"; */
+            font-family: 'Staatliches', cursive;
+            font-family: 'Blinker', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -35,12 +39,19 @@
             width: 100px;
             height: 60px;
             margin: 15px;
+            transition: all .6s;
+            opacity: 1;
+            border-radius: 3px;
+
         }
 
         .mainimg {
             margin: 50px;
             width: 820px;
             height: 520px;
+            transition: all 1.5s;
+            opacity: 1;
+            border-radius: 5px;
         }
 
         .imgsmall {
@@ -48,10 +59,45 @@
         }
 
         .right {
-            background: gray;
+            /* background: gray; */
         }
-        .name{
-            font-size: 50px;
+
+        .name {
+            font-size: 60px;
+            font-family: 'Staatliches', cursive;
+            /* color: rgb(0,0,0,0.9); */
+            letter-spacing: 2px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-family: 'Staatliches', cursive;
+        }
+
+        .hide {
+            opacity: 0;
+        }
+        .addtocart{
+            position: absolute;
+            left: 50%;
+            bottom: 80px;
+            height: 50px;
+            width: 150px;
+            background:white;
+            color: black;
+            transition: all .4s;
+            font-family: 'Staatliches', cursive;
+            border-radius: 3px;
+            font-size: 20px;
+
+        }
+        .addtocart:hover{
+            background:black;
+            color:white;
+            width: 160px;
+            font-size: 17px;
+            height: 40px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -72,16 +118,40 @@
         </div>
         <div class="right">
             <h1 class="name">Nvdia RTX 4090</h1>
+            <h3>info</h3>
+            The GeForce RTX 4090 is an enthusiast-class graphics card by NVIDIA, launched on September 20th, 2022. Built
+            on the 4 nm process, and based on the AD102 graphics processor, in its AD102-300-A1 variant, the card
+            supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 4090. Additionally,
+            the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and
+            more, in upcoming video games. The AD102 graphics processor is a large chip with a die area of 608 mm² and
+            76,300 million transistors. Unlike the fully unlocked GeForce RTX 4090 Ti, which uses the same GPU but has
+            all 18176 shaders enabled, NVIDIA has disabled some shading units on the GeForce RTX 4090 to reach the
+            product's target shader count. It features 16384 shading units, 512 texture mapping units, and 176 ROPs.
+            Also included are 512 tensor cores which help improve the speed of machine learning applications. The card
+            also has 128 raytracing acceleration cores. NVIDIA has paired 24 GB GDDR6X memory with the GeForce RTX 4090,
+            which are connected using a 384-bit memory interface. The GPU is operating at a frequency of 2235 MHz, which
+            can be boosted up to 2520 MHz, memory is running at 1313 MHz (21 Gbps effective).
+            <div class="price">Price : 200,000 only</div>
         </div>
     </div>
+    <button class="addtocart">Add to Cart</button>
     <script>
         let img = document.getElementsByClassName("sideimg");
         let mainimg = document.getElementById("mainimg");
         let temp = "";
         function change(n) {
-            temp = img[n].src;
-            img[n].src = mainimg.src;
-            mainimg.src = temp;
+            mainimg.classList.add("hide");
+            img[n].classList.add("hide");
+            setTimeout(() => {
+                temp = img[n].src;
+                img[n].src = mainimg.src;
+                mainimg.src = temp;
+                mainimg.classList.remove("hide");
+                img[n].classList.remove("hide");
+
+
+            }, 1000);
+
         }
     </script>
 </body>
