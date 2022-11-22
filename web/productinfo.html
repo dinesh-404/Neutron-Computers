@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> -->
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
@@ -22,26 +21,29 @@
 
         .center {
             display: grid;
-            grid-template-columns: 1fr 600px;
+            grid-template-columns: 1fr 500px;
         }
 
         .left {
-            background: red;
             display: grid;
             grid-template-columns: 100px 1fr;
             height: 700px;
-
         }
 
         .sideimg {
             width: 100px;
-            height: 50px;
+            height: 60px;
+            margin: 15px;
         }
 
         .mainimg {
             margin: 50px;
-            width: 750px;
-            height: 450px;
+            width: 820px;
+            height: 520px;
+        }
+
+        .imgsmall {
+            margin-top: 70px;
         }
 
         .right {
@@ -54,18 +56,26 @@
     <div class="center">
         <div class="left">
             <div class="imgsmall">
-
-                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" class="sideimg" alt="">
-                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" class="sideimg" alt="">
-                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" class="sideimg" alt="">
-                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" class="sideimg" alt="">
-                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40906.jpg" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" onclick="change(0)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" onclick="change(1)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" onclick="change(2)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" onclick="change(3)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40906.jpg" onclick="change(4)" class="sideimg" alt="">
             </div>
 
-            <div class="imgmain"><img class="mainimg" src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" alt=""></div>
+            <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" alt=""></div>
         </div>
         <div class="right"></div>
     </div>
+    <script>
+        let img = document.getElementsByClassName("sideimg");
+        let mainimg = document.getElementById("mainimg");
+        let temp = "";
+        function change(n){
+            temp = img[n].src;
+            img[n].src= mainimg.src;
+            mainimg.src = temp;
+        }
+    </script>
 </body>
-
 </html>
