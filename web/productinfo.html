@@ -25,6 +25,7 @@
         }
 
         .center {
+            height: 745px;
             display: grid;
             grid-template-columns: 1fr 500px;
         }
@@ -38,7 +39,7 @@
         .sideimg {
             width: 100px;
             height: 60px;
-            margin: 15px;
+            margin: 17px;
             transition: all .6s;
             opacity: 1;
             border-radius: 3px;
@@ -59,6 +60,7 @@
         }
 
         .right {
+            padding: 5px;
             /* background: gray; */
         }
 
@@ -70,8 +72,11 @@
         }
 
         .price {
+            position: absolute;
+            bottom: 170px;
             font-size: 30px;
             font-family: 'Staatliches', cursive;
+            font-weight: 100;
         }
 
         .hide {
@@ -99,6 +104,10 @@
             height: 40px;
             border-radius: 5px;
         }
+        p{
+            word-spacing: 2px;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 
@@ -106,9 +115,9 @@
     <div class="center">
         <div class="left">
             <div class="imgsmall">
-                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" onclick="change(0)" class="sideimg" alt="">
-                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" onclick="change(1)" class="sideimg" alt="">
-                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" onclick="change(2)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" onclick="change(0)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" onclick="change(1)" class="sideimg" alt="">
+                <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" onclick="change(2)" class="sideimg" alt="">
                 <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" onclick="change(3)" class="sideimg" alt="">
                 <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40906.jpg" onclick="change(4)" class="sideimg" alt="">
             </div>
@@ -119,19 +128,17 @@
         <div class="right">
             <h1 class="name">Nvdia RTX 4090</h1>
             <h3>info</h3>
-            The GeForce RTX 4090 is an enthusiast-class graphics card by NVIDIA, launched on September 20th, 2022. Built
-            on the 4 nm process, and based on the AD102 graphics processor, in its AD102-300-A1 variant, the card
-            supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 4090. Additionally,
-            the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and
-            more, in upcoming video games. The AD102 graphics processor is a large chip with a die area of 608 mm² and
-            76,300 million transistors. Unlike the fully unlocked GeForce RTX 4090 Ti, which uses the same GPU but has
-            all 18176 shaders enabled, NVIDIA has disabled some shading units on the GeForce RTX 4090 to reach the
-            product's target shader count. It features 16384 shading units, 512 texture mapping units, and 176 ROPs.
-            Also included are 512 tensor cores which help improve the speed of machine learning applications. The card
-            also has 128 raytracing acceleration cores. NVIDIA has paired 24 GB GDDR6X memory with the GeForce RTX 4090,
-            which are connected using a 384-bit memory interface. The GPU is operating at a frequency of 2235 MHz, which
-            can be boosted up to 2520 MHz, memory is running at 1313 MHz (21 Gbps effective).
-            <div class="price">Price : 200,000 only</div>
+            <p>
+
+                The GeForce RTX 4090 is an enthusiast-class graphics card by NVIDIA, launched on September 20th, 2022. Built
+                on the 4 nm process, and based on the AD102 graphics processor, in its AD102-300-A1 variant, the card
+                supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 4090. Additionally,
+                the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and
+                more, in upcoming video games. The AD102 graphics processor is a large chip with a die area of 608 mm² and
+                76,300 million transistors. 
+            </p>
+            <div class="price">Price : 200,000/-</div>
+            
         </div>
     </div>
     <button class="addtocart">Add to Cart</button>
