@@ -96,7 +96,6 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                transition: all .6s;\n");
       out.write("                opacity: 1;\n");
       out.write("                border-radius: 3px;\n");
-      out.write("\n");
       out.write("            }\n");
       out.write("\n");
       out.write("            .mainimg {\n");
@@ -163,63 +162,62 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("    </head>\n");
-      out.write("\n");
       out.write("    <body>\n");
       out.write("        ");
-
+ 
             String a = "3";
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, a);
             ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
         
       out.write("\n");
       out.write("        <div class=\"center\">\n");
       out.write("            <div class=\"left\">\n");
       out.write("                <div class=\"imgsmall\">\n");
-      out.write("                    <img src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg\" onclick=\"change(0)\" class=\"sideimg\" alt=\"\">\n");
-      out.write("                    <img src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg\" onclick=\"change(1)\" class=\"sideimg\" alt=\"\">\n");
-      out.write("                    <img src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg\" onclick=\"change(2)\" class=\"sideimg\" alt=\"\">\n");
-      out.write("                    <img src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg\" onclick=\"change(3)\" class=\"sideimg\" alt=\"\">\n");
-      out.write("                    <img src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40906.jpg\" onclick=\"change(4)\" class=\"sideimg\" alt=\"\">\n");
-      out.write("                </div>\n");
+      out.write("                    ");
+
+                        int i;
+                        for (i = 1; i <=5; i++) {
+                    
       out.write("\n");
-      out.write("                <div class=\"imgmain\"><img class=\"mainimg\" id=\"mainimg\" src=\"productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg\"\n");
-      out.write("                                          alt=\"\"></div>\n");
+      out.write("                    <img src=\"productimg/");
+      out.print(rs.getString("pimage")+i  );
+      out.write(".jpg\" onclick=\"change(");
+out.println(i-1);
+      out.write(")\" class=\"sideimg\" alt=\"\">\n");
+      out.write("                    ");
+ } 
+      out.write("\n");
+      out.write("                    \n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"imgmain\"><img class=\"mainimg\" id=\"mainimg\" src=\"productimg/");
+      out.print(rs.getString("pimage"));
+      out.write("0.jpg\" alt=\"\"></div>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"right\">\n");
-      out.write("                <h1 class=\"name\">Nvdia RTX 4090</h1>\n");
+      out.write("                <h1 class=\"name\">");
+      out.print(rs.getString("name"));
+      out.write("</h1>\n");
       out.write("                <h3>info</h3>\n");
       out.write("                <p>\n");
+      out.write("                    ");
+      out.print(rs.getString("info"));
       out.write("\n");
-      out.write("                    The GeForce RTX 4090 is an enthusiast-class graphics card by NVIDIA, launched on September 20th, 2022. Built\n");
-      out.write("                    on the 4 nm process, and based on the AD102 graphics processor, in its AD102-300-A1 variant, the card\n");
-      out.write("                    supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 4090. Additionally,\n");
-      out.write("                    the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and\n");
-      out.write("                    more, in upcoming video games. The AD102 graphics processor is a large chip with a die area of 608 mm² and\n");
-      out.write("                    76,300 million transistors. \n");
       out.write("                </p>\n");
-      out.write("                <div class=\"price\">Price : 200,000/-</div>\n");
-      out.write("\n");
+      out.write("                <div class=\"price\" >Price : ");
+      out.print(rs.getString("price"));
+      out.write("/-</div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("        <button class=\"addtocart\">Add to Cart</button>\n");
-      out.write("        <script>\n");
-      out.write("            let img = document.getElementsByClassName(\"sideimg\");\n");
-      out.write("            let mainimg = document.getElementById(\"mainimg\");\n");
-      out.write("            let temp = \"\";\n");
-      out.write("            function change(n) {\n");
-      out.write("            mainimg.classList.add(\"hide\");\n");
-      out.write("            img[n].classList.add(\"hide\");\n");
-      out.write("            setTimeout(() = > {\n");
-      out.write("            temp = img[n].src;\n");
-      out.write("            img[n].src = mainimg.src;\n");
-      out.write("            mainimg.src = temp;\n");
-      out.write("            mainimg.classList.remove(\"hide\");\n");
-      out.write("            img[n].classList.remove(\"hide\");\n");
-      out.write("            }, 1000);\n");
-      out.write("            }\n");
-      out.write("        </script>\n");
+      out.write("        <button class=\"addtocart\" onclick=\"location.href='scripts/add_to_cart.jsp?pid=");
+      out.print(rs.getString("id"));
+      out.write("'\">Add to Cart</button>\n");
+      out.write("        ");
+ }
+      out.write("\n");
+      out.write("        <script src=\"javascript/imgchange.js\"></script>\n");
       out.write("    </body>\n");
       out.write("\n");
       out.write("</html>");

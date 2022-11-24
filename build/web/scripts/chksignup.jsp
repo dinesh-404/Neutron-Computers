@@ -7,7 +7,6 @@
 <%
     Class.forName("com.mysql.jdbc.Driver");
     try {
-
         String mail = request.getParameter("mail");
         String pwd = request.getParameter("pwd");
         String username = request.getParameter("uname");

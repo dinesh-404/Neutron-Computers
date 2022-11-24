@@ -3,7 +3,7 @@ let err="";
         function submit(){
         let submitbtn = document.addEventListener("click", function(){
         
-        document.getElementById("singupfrm").submit();
+        document.getElementById("signupfrm").submit();
         })
 
         }
@@ -21,7 +21,7 @@ err += "please enter empty fields\n";
         }
 //age validation
 let age = document.getElementsByName('age');
-        if (isNaN(age.value) || age.value < 1 || age.value > 100) {
+        if (!isNaN(age.value) || !age.value < 1 || !age.value > 100) {
 err += "please enter valid age \n";
         validate++;
         }
@@ -50,7 +50,7 @@ validate++;
 
 //passwrd
 let pass = document.getElementById('pwd').value;
-        if (pass.length > 7 || !/[0-9]/.test(pass) || !/[a-z]/.test(pass)) {
+        if (!pass.length > 7 || !/[0-9]/.test(pass) || !/[a-z]/.test(pass)) {
 err += "please enter valid password which have numbers and characters \n";
         validate++;
         }

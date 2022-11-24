@@ -12,11 +12,15 @@
         <title>Signup Page</title>
     </head>
     <body>
+        <script src="javascript/validation.js">
+            
+            
+        </script>
         <div class="center">
             <div class="left">
                 <img class="a img" src="css/cssimg/logo-final.png" alt="" srcset="">
                 <center><h1>Create Your Account</h1></center><hr>
-                <form method="post" id="signupfrm" action="scripts/chksignup.jsp">
+                <form method="post" id="signupfrm" action="chk_signup">
                     <div class="signupform">
                         <div>
                             <div class="txtarea"> 
@@ -45,8 +49,8 @@
                             <div class="txtarea">
                                 <div class="txtfield">
                                     <label class="label rbtngroup">Gender</label>
-                                    <button type="button" id="mbtn" class="rbtn rbtngroup" onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
-                                    <button type="button" id="fbtn" class="rbtn rbtngroup" onclick="document.getElementById('female').click(); this.classList.add('click'); m.classList.remove('click');">Female</button>
+                                    <button type="button" id="mbtn" class="rbtn rbtngroup" onclick="document.getElementById('male').click(); this.classList.add('click'); document.getElementById('fbtn').classList.remove('click');">Male</button>
+                                    <button type="button" id="fbtn" class="rbtn rbtngroup" onclick="document.getElementById('female').click(); this.classList.add('click'); document.getElementById('mbtn').classList.remove('click');">Female</button>
                                     <input hidden type="radio" id="male" name="gender" value="male" >
                                     <input hidden type="radio" id="female" name="gender" value="female" >
                                 </div>
@@ -71,9 +75,6 @@
                 </center>
             </div>
         </div>
-        <script src="javascript/validation.js">
-            let m = document.getElementById("mbtn");
-            let f = document.getElementById("fbtn");
-        </script>
+        
     </body>
 </html>

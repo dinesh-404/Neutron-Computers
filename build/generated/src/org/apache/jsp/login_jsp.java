@@ -41,6 +41,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write(" code");
       out.write("\n");
       out.write(" \n");
       out.write("<!DOCTYPE html> \n");
@@ -48,7 +49,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta charset=\"UTF-8\">\n");
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/login.css\" />\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/login.css\"/>\n");
       out.write("    <title>Sign in</title><link rel=\"stylesheet\" href=\"css/login.css\" />\n");
       out.write("</head>\n");
       out.write("<body>\n");
@@ -62,7 +63,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"left\">\n");
       out.write("            <h1>Login to Your Account</h1>\n");
       out.write("            <hr>\n");
-      out.write("            <form method=\"post\" action=\"scripts/chklogin.jsp\">\n");
+      out.write("            <form method=\"post\" action=\"scripts/chklogin.java\">\n");
       out.write("                <div class=\"fields\">\n");
       out.write("                    <div class=\"txtarea r\">\n");
       out.write("                        <input type=\"text\" class=\"txtfield\" name=\"mail\" autofocus required>\n");

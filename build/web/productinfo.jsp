@@ -44,7 +44,6 @@
                 transition: all .6s;
                 opacity: 1;
                 border-radius: 3px;
-
             }
 
             .mainimg {
@@ -111,29 +110,27 @@
             }
         </style>
     </head>
-
     <body>
-        <%            String a = "3";
+        <% 
+            String a = "3";
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, a);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
         %>
-
-
         <div class="center">
             <div class="left">
                 <div class="imgsmall">
                     <%
                         int i;
-                        for (i = 1; i <= 5; i++) {
+                        for (i = 1; i <=5; i++) {
                     %>
-                    <img src="productimg/<%=rs.getString("pimage")+i  %>.jpg" onclick="change(1)" class="sideimg" alt="">
+                    <img src="productimg/<%=rs.getString("pimage")+i  %>.jpg" onclick="change(<%out.println(i-1);%>)" class="sideimg" alt="">
                     <% } %>
                     
                 </div>
-                <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>1.jpg" alt=""></div>
+                <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>0.jpg" alt=""></div>
             </div>
             <div class="right">
                 <h1 class="name"><%=rs.getString("name")%></h1>
@@ -141,27 +138,12 @@
                 <p>
                     <%=rs.getString("info")%>
                 </p>
-                <div class="price" ><%=rs.getString("price")%>/-</div>
+                <div class="price" >Price : <%=rs.getString("price")%>/-</div>
             </div>
         </div>
         <button class="addtocart" onclick="location.href='scripts/add_to_cart.jsp?pid=<%=rs.getString("id")%>'">Add to Cart</button>
         <% }%>
-        <script>
-            let img = document.getElementsByClassName("sideimg");
-            let mainimg = document.getElementById("mainimg");
-            let temp = "";
-            function change(n) {
-            mainimg.classList.add("hide");
-            img[n].classList.add("hide");
-            setTimeout(() = > {
-            temp = img[n].src;
-            img[n].src = mainimg.src;
-            mainimg.src = temp;
-            mainimg.classList.remove("hide");
-            img[n].classList.remove("hide");
-            }, 1000);
-            }
-        </script>
+        <script src="javascript/imgchange.js"></script>
     </body>
 
 </html>
