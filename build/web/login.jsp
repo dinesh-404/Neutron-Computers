@@ -5,15 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/signup.css">
     <title>Signup Page</title>
-    <style>
-        .hide {
-            height: 0;
-            opacity: 0;
-            position: absolute;
-            top: -5px;
-            margin-left: 120px;
-        }
-    </style>
 </head>
 <body>
     <div class="center" id="signupfrm">
@@ -33,7 +24,6 @@
                             <input type="text" class="txtfield inpt" id="mail" required name="mail">
                             <label class="label a">Email</label>
                         </div>
-
                         <div class="txtarea">
                             <input type="text" class="txtfield inpt" id="pwd" required name="pwd">
                             <label class="label a">Password</label>
@@ -110,7 +100,7 @@
             <button id="loginbtn" class="submitbtn">SignUp</button>
         </div>
     </div>
-    <!-- <script src="javascript/validation.js"> -->
+    <script src="javascript/validation.js"></script>
     <script>
         // these variables are used in with html dont delete it
         let m = document.getElementById("mbtn");
