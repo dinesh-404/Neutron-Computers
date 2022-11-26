@@ -47,7 +47,7 @@ public class chk_signup extends HttpServlet {
                 chkusr.setString(3, mno);
                 ResultSet chk = chkusr.executeQuery();
                 if (chk.next()) {
-                    response.sendRedirect("../signup.jsp?err='same username/email/mobile no is already registered kindly change'");
+                    response.sendRedirect("login.jsp?err='same username/email/mobile no is already registered kindly change'");
                 } else {
                     out.println("okeee");
 
@@ -63,7 +63,7 @@ public class chk_signup extends HttpServlet {
                     int a = pst.executeUpdate();
                     if (a > 0) {
                         out.println("insertyed");
-                        response.sendRedirect("../login.jsp?err='successfully created account login to continue'");
+                        response.sendRedirect("login.jsp?err='successfully created account login to continue'");
                     } else {
                         out.println("elese");
                     }

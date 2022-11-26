@@ -57,7 +57,7 @@
                     <label class="label a">Address</label>
                 </div>
                 <center>
-                    <input type="button" id="submitbt" value="Sign Up" class="submitbtn">
+                    <input type="submit" id="submitbt" value="Sign Up" class="submitbtn">
                 </center>
             </form>
         </div>
@@ -75,7 +75,7 @@
                 <h1>Login to Your Account</h1>
             </center>
             <hr>
-            <form method="post" action="chk_lohin">
+            <form method="post" action="chk_login">
                 <div class="fields">
                     <div class="txtarea r">
                         <input type="text" class="txtfield" name="mail" autofocus required>
@@ -105,10 +105,10 @@
         // these variables are used in with html dont delete it
         let m = document.getElementById("mbtn");
         let f = document.getElementById("fbtn");
-        let submit = document.getElementById("submitbtn");
+        let submitbtn = document.getElementById("submitbtn");
         let signupfrm = document.getElementById("signupfrm");
         let loginbtn = document.getElementById("loginbtn");
-        submit.addEventListener("mousedown", function () {
+        submitbtn.addEventListener("mousedown", function () {
             signupfrm.classList.add("hide");
             loginfrm.classList.remove("hide");
         });

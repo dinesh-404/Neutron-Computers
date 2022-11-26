@@ -3,12 +3,11 @@
     Created on : 21 Nov, 2022, 6:42:00 PM
     Author     : Dinesh
 --%>
-
+ 
 <%@page contentType="text/html" pageEncoding="UTF-8"%> -->
 <%@include file="scripts/connection.jsp" %>
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -146,5 +145,4 @@
         <% }%>
         <script src="javascript/imgchange.js"></script>
     </body>
-
 </html>

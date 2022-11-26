@@ -13,8 +13,9 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/scripts/connection.jsp");
+    _jspx_dependants.add("/navbar.html");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -49,7 +50,7 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("<!-- ");
       out.write("\n");
-      out.write("\n");
+      out.write(" \n");
       out.write(" -->\n");
       out.write('\n');
       out.write('\n');
@@ -60,7 +61,6 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
@@ -113,7 +113,6 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            .right {\n");
       out.write("                padding: 5px;\n");
-      out.write("                /* background: gray; */\n");
       out.write("            }\n");
       out.write("\n");
       out.write("            .name {\n");
@@ -137,7 +136,7 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            .addtocart{\n");
       out.write("                position: absolute;\n");
       out.write("                left: 50%;\n");
-      out.write("                bottom: 80px;\n");
+      out.write("                bottom: 30px;\n");
       out.write("                height: 50px;\n");
       out.write("                width: 150px;\n");
       out.write("                background:white;\n");
@@ -160,12 +159,85 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                word-spacing: 2px;\n");
       out.write("                letter-spacing: 1px;\n");
       out.write("            }\n");
-      out.write("            \n");
+      out.write("\n");
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
- 
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html lang=\"en\">\r\n");
+      out.write("\r\n");
+      out.write("<head>\r\n");
+      out.write("    <meta charset=\"UTF-8\">\r\n");
+      out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
+      out.write("    <title>Document</title>\r\n");
+      out.write("    <style>\r\n");
+      out.write("        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');\r\n");
+      out.write("        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');\r\n");
+      out.write("        @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap');\r\n");
+      out.write("        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');\r\n");
+      out.write("\r\n");
+      out.write("        .navmain {\r\n");
+      out.write("            font-family: \"Ubuntu Mono\";\r\n");
+      out.write("            display: grid;\r\n");
+      out.write("            padding-top: 5px;\r\n");
+      out.write("            grid-template-columns: 1fr 1fr 1fr;\r\n");
+      out.write("            height: 50px;\r\n");
+      out.write("            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navcenter{\r\n");
+      out.write("            /* background:gray; */\r\n");
+      out.write("\r\n");
+      out.write("            text-align: center;\r\n");
+      out.write("            font-size: 30px;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navcenter a{\r\n");
+      out.write("            margin-top: 10px;\r\n");
+      out.write("            font-family: \"Blinker\";\r\n");
+      out.write("            font-weight: 500;\r\n");
+      out.write("            text-decoration: none;\r\n");
+      out.write("            color: black;\r\n");
+      out.write("            margin: 20px;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navcenter a:hover{\r\n");
+      out.write("            text-decoration: underline;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navright{\r\n");
+      out.write("            /* background:lightslategray; */\r\n");
+      out.write("            text-align: right;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navright .logo{\r\n");
+      out.write("            margin-right:15px;\r\n");
+      out.write("        }\r\n");
+      out.write("        .navleft .logo{\r\n");
+      out.write("            margin-left: 15px;\r\n");
+      out.write("        }\r\n");
+      out.write("        .logo{\r\n");
+      out.write("            height: 40px;\r\n");
+      out.write("            width: 40px;\r\n");
+      out.write("        }\r\n");
+      out.write("    </style>\r\n");
+      out.write("</head>\r\n");
+      out.write("\r\n");
+      out.write("<body>\r\n");
+      out.write("    <div class=\"navmain\">\r\n");
+      out.write("        <div class=\"navleft\"><a href=\"\"><img class=\"logo\" src=\"css/cssimg/logo-final.png\" alt=\"\"></a></div>\r\n");
+      out.write("        <div class=\"navcenter\">\r\n");
+      out.write("\r\n");
+      out.write("            <a href=\"http://\">Home</a>\r\n");
+      out.write("            <a href=\"http://\">Shop</a>\r\n");
+      out.write("            <a href=\"http://\">Cart</a>\r\n");
+      out.write("            <a href=\"http://\">About</a>\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"navright\"><a href=\"\"><img class=\"logo\" src=\"css/cssimg/logo-final.png\" alt=\"\"></a></div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</body>\r\n");
+      out.write("\r\n");
+      out.write("</html>");
+      out.write("\n");
+      out.write("\n");
+      out.write("        ");
             String a = "3";
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
@@ -180,18 +252,18 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    ");
 
                         int i;
-                        for (i = 1; i <=5; i++) {
+                        for (i = 1; i <= 5; i++) {
                     
       out.write("\n");
       out.write("                    <img src=\"productimg/");
-      out.print(rs.getString("pimage")+i  );
+      out.print(rs.getString("pimage") + i);
       out.write(".jpg\" onclick=\"change(");
-out.println(i-1);
+out.println(i - 1);
       out.write(")\" class=\"sideimg\" alt=\"\">\n");
       out.write("                    ");
- } 
+ }
       out.write("\n");
-      out.write("                    \n");
+      out.write("\n");
       out.write("                </div>\n");
       out.write("                <div class=\"imgmain\"><img class=\"mainimg\" id=\"mainimg\" src=\"productimg/");
       out.print(rs.getString("pimage"));
@@ -212,7 +284,7 @@ out.println(i-1);
       out.write("/-</div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("        <button class=\"addtocart\" onclick=\"location.href='scripts/add_to_cart.jsp?pid=");
+      out.write("        <button class=\"addtocart\" onclick=\"location.href = 'scripts/add_to_cart.jsp?pid=");
       out.print(rs.getString("id"));
       out.write("'\">Add to Cart</button>\n");
       out.write("        ");
@@ -220,7 +292,6 @@ out.println(i-1);
       out.write("\n");
       out.write("        <script src=\"javascript/imgchange.js\"></script>\n");
       out.write("    </body>\n");
-      out.write("\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
