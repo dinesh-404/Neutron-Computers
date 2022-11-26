@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.sql.*;
 /**
  *
  * @author Dinesh
@@ -32,16 +32,27 @@ public class add_to_cart extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+
+
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet add_to_cart</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet add_to_cart at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String session_id = "1";
+            String id = request.getParameter("pid");
+            String status = "added to cart";
+            String payment = "not received";
+            String sql = "insert into cart (uid ,pid ,status ,payment ) values(?,?,?,?)";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, session_id);
+            pst.setString(2, id);
+            pst.setString(3, status);
+            pst.setString(4, payment);
+            int i = pst.executeUpdate();
+            if (i > 0) {
+                response.sendRedirect("../productinfo.jsp?alrt='Successfully added to cart'");
+            } else {
+                response.sendRedirect("../productinfo.jsp?alrt='could not add product to cart'");
+            }
+        } catch (Exception e) {
+            response.getWriter().println(e);
         }
     }
 

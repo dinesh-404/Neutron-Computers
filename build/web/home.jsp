@@ -252,9 +252,9 @@
             <h2>Featured</h2>
             <h1>Genesis by ORIGIN</h1>
             <p>Origin PC is now a maker of very fine, high-end performance computers that are often better known as
-                “high-end gaming computers.” The fallacy of course is the rigs are suitable for much more than just
+                high-end gaming computers.” The fallacy of course is the rigs are suitable for much more than just
                 gaming,
-                and the people who can afford them don’t likely have time for week long journeys through the World of
+                and the people who can afford them likely have time for week long journeys through the World of
                 Warcraft</p>
             <button>Buy Now</button>
         </div>

@@ -160,6 +160,7 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                word-spacing: 2px;\n");
       out.write("                letter-spacing: 1px;\n");
       out.write("            }\n");
+      out.write("            \n");
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");

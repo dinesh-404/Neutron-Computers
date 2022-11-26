@@ -61,7 +61,6 @@
 
             .right {
                 padding: 5px;
-                /* background: gray; */
             }
 
             .name {
@@ -85,7 +84,7 @@
             .addtocart{
                 position: absolute;
                 left: 50%;
-                bottom: 80px;
+                bottom: 30px;
                 height: 50px;
                 width: 150px;
                 background:white;
@@ -108,12 +107,13 @@
                 word-spacing: 2px;
                 letter-spacing: 1px;
             }
-            
+
         </style>
     </head>
     <body>
-        <% 
-            String a = "3";
+        <%@include file="navbar.html" %>
+
+        <%            String a = "3";
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, a);
@@ -125,11 +125,11 @@
                 <div class="imgsmall">
                     <%
                         int i;
-                        for (i = 1; i <=5; i++) {
+                        for (i = 1; i <= 5; i++) {
                     %>
-                    <img src="productimg/<%=rs.getString("pimage")+i  %>.jpg" onclick="change(<%out.println(i-1);%>)" class="sideimg" alt="">
-                    <% } %>
-                    
+                    <img src="productimg/<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
+                    <% }%>
+
                 </div>
                 <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>0.jpg" alt=""></div>
             </div>
@@ -142,7 +142,7 @@
                 <div class="price" >Price : <%=rs.getString("price")%>/-</div>
             </div>
         </div>
-        <button class="addtocart" onclick="location.href='scripts/add_to_cart.jsp?pid=<%=rs.getString("id")%>'">Add to Cart</button>
+        <button class="addtocart" onclick="location.href = 'scripts/add_to_cart.jsp?pid=<%=rs.getString("id")%>'">Add to Cart</button>
         <% }%>
         <script src="javascript/imgchange.js"></script>
     </body>
