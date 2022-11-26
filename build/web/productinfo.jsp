@@ -110,7 +110,7 @@
         </style>
     </head>
     <body>
-        <%@include file="navbar.html" %>
+        <%@include file="navbar.jsp" %>
 
         <%            String a = "3";
             String sql = "select * from products where id = ?";

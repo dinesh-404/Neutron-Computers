@@ -13,16 +13,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
         .navmain {
+            position: absolute;
+            top:0;
+            width: 100%;
+            z-index: 5;
             font-family: "Ubuntu Mono";
             display: grid;
             padding-top: 5px;
+            background:white;
             grid-template-columns: 1fr 1fr 1fr;
             height: 50px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         }
         .navcenter{
-            /* background:gray; */
-
             text-align: center;
             font-size: 30px;
         }
@@ -53,12 +56,10 @@
         }
     </style>
 </head>
-
 <body>
     <div class="navmain">
         <div class="navleft"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>
         <div class="navcenter">
-
             <a href="http://">Home</a>
             <a href="http://">Shop</a>
             <a href="http://">Cart</a>

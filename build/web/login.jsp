@@ -7,6 +7,7 @@
     <title>Signup Page</title>
 </head>
 <body>
+    <%@include file="navbar.jsp" %>
     <div class="center" id="signupfrm">
         <div class="left">
             <center>
