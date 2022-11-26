@@ -68,23 +68,56 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Admin Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("        <div class=\"outline\"></div>\n");
       out.write("            <div class=\"in\">\n");
       out.write("                \n");
-      out.write("<!--                <table border=\"2\">\n");
+      out.write("                <table border=\"2\">\n");
       out.write("                    <tr><td colspan=\"3\">click on row to delete it</td><tr>\n");
       out.write("                    <tr>\n");
       out.write("                        <td>id</td>\n");
       out.write("                        <td>Name</td>\n");
       out.write("                        <td>pwd</td>\n");
       out.write("                    </tr>\n");
+                try {
+                            String q = "select * from login";
+                            Statement pstmt = con.createStatement();
+                            ResultSet rs = pstmt.executeQuery(q);
+                            while (rs.next()) {
+                    
       out.write("\n");
-      out.write("                </table>-->\n");
+      out.write("                    <tr class=\"tablerow\" onclick=\"location.href = 'deletescript.jsp?id=");
+      out.print(rs.getInt("id"));
+      out.write(" '\"> <td>");
+      out.print(rs.getString("id"));
+      out.write("</td>\n");
+      out.write("                        <td class=\"tablec\">");
+      out.print(rs.getString("username"));
+      out.write("</td>\n");
+      out.write("                        <td class=\"tablec\">");
+      out.print(rs.getString("password"));
+      out.write("</td>\n");
+      out.write("                    </tr>\n");
+      out.write("                    ");
+
+                            }
+                        } catch (Exception e) {
+                            out.println(e);
+                        }
+                    
+      out.write("\n");
+      out.write("                </table>\n");
+      out.write("                <br>\n");
+      out.write("                                <br>\n");
+      out.write("                <br>\n");
+      out.write("\n");
       out.write("                ");
       out.write(" \n");
       out.write("\n");
       out.write("<div class=\"center\">\n");
-      out.write("    <div class=\"left\">            \n");
+      out.write("    <div class=\"left\">    \n");
+      out.write("        <h1>Add Products</h1>        \n");
       out.write("        <form method=\"post\" id=\"frm1\" action=\"addbackend.jsp\" enctype=\"multipart/form-data\">\n");
       out.write("            <div class=\"txtarea\">\n");
       out.write("                <label for=\"pname\" class=\"lbl\">Name</label>\n");
@@ -100,9 +133,10 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("            <div class=\"txtarea\">\n");
       out.write("                <label for=\"p\" class=\"lbl\">file</label>\n");
+      out.write("                <div class=\"tb\"></div>\n");
       out.write("                <input type=\"file\" name=\"fileinput\" class=\"tb\" id=\"finput\" multiple=\"true\" accept=\".jpg\"/><br/>\n");
       out.write("            </div>\n");
-      out.write("            <input type=\"submit\">\n");
+      out.write("            <center><input class=\"tb button\" type=\"submit\"></center>\n");
       out.write("        </form>\n");
       out.write("    </div> \n");
       out.write("    <div class=\"right\">\n");
@@ -134,6 +168,8 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    };\n");
       out.write("</script>\n");
       out.write("\n");
+      out.write("                <br>\n");
+      out.write("                <br>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

@@ -226,6 +226,8 @@ a:hover {
 }
 .parts{
     padding: 20px;
+    margin: 20px;
+    background:red;
     font-size: 30px;
 }
 .parts .text h1 {

@@ -1,0 +1,21 @@
+SMAP
+testjoin_jsp.java
+JSP
+*S JSP
+*F
++ 0 testjoin.jsp
+scripts/testjoin.jsp
++ 1 connection.jsp
+scripts/connection.jsp
+*L
+5,4:50
+5#1,2:53
+8,3:56
+8#0,9:59
+16,7:68
+22:75
+23:76,3
+24:79
+25,2:81
+26,6:83
+*E
