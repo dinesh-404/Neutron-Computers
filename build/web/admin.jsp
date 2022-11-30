@@ -15,11 +15,8 @@
         <title>Admin Page</title>
     </head>
     <body>
-
-
         <div class="outline"></div>
         <div class="in">
-
             <table border="2">
                 <tr><td colspan="3">click on row to delete it</td><tr>
                 <tr>
@@ -55,21 +52,14 @@
                 PreparedStatement pst = con.prepareStatement(sql);
                 ResultSet rs = pst.executeQuery();
                 while (rs.next()) {
-
-
             %>
             <%=rs.getString(1)%>
             <%=rs.getString(2)%>
             <%=rs.getString(3)%>
             <%=rs.getString(4)%>
-
-
-
             <%out.println("<br>");
                 }
             %>
-
-
         </div>
     </body>
 </html>

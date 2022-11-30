@@ -68,51 +68,49 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Admin Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        \n");
-      out.write("        \n");
       out.write("        <div class=\"outline\"></div>\n");
-      out.write("            <div class=\"in\">\n");
-      out.write("                \n");
-      out.write("                <table border=\"2\">\n");
-      out.write("                    <tr><td colspan=\"3\">click on row to delete it</td><tr>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td>id</td>\n");
-      out.write("                        <td>Name</td>\n");
-      out.write("                        <td>pwd</td>\n");
-      out.write("                    </tr>\n");
+      out.write("        <div class=\"in\">\n");
+      out.write("            <table border=\"2\">\n");
+      out.write("                <tr><td colspan=\"3\">click on row to delete it</td><tr>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td>id</td>\n");
+      out.write("                    <td>Name</td>\n");
+      out.write("                    <td>pwd</td>\n");
+      out.write("                </tr>\n");
+      out.write("                ");
                 try {
-                            String q = "select * from login";
-                            Statement pstmt = con.createStatement();
-                            ResultSet rs = pstmt.executeQuery(q);
-                            while (rs.next()) {
-                    
+                        String q = "select * from login";
+                        Statement pstmt = con.createStatement();
+                        ResultSet rs = pstmt.executeQuery(q);
+                        while (rs.next()) {
+                
       out.write("\n");
-      out.write("                    <tr class=\"tablerow\" onclick=\"location.href = 'deletescript.jsp?id=");
+      out.write("                <tr class=\"tablerow\" onclick=\"location.href = 'deletescript.jsp?id=");
       out.print(rs.getInt("id"));
       out.write(" '\"> <td>");
       out.print(rs.getString("id"));
       out.write("</td>\n");
-      out.write("                        <td class=\"tablec\">");
+      out.write("                    <td class=\"tablec\">");
       out.print(rs.getString("username"));
       out.write("</td>\n");
-      out.write("                        <td class=\"tablec\">");
+      out.write("                    <td class=\"tablec\">");
       out.print(rs.getString("password"));
       out.write("</td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    ");
-
-                            }
-                        } catch (Exception e) {
-                            out.println(e);
-                        }
-                    
-      out.write("\n");
-      out.write("                </table>\n");
-      out.write("                <br>\n");
-      out.write("                                <br>\n");
-      out.write("                <br>\n");
-      out.write("\n");
+      out.write("                </tr>\n");
       out.write("                ");
+
+                        }
+                    } catch (Exception e) {
+                        out.println(e);
+                    }
+                
+      out.write("\n");
+      out.write("            </table>\n");
+      out.write("            <br>\n");
+      out.write("            <br>\n");
+      out.write("            <br>\n");
+      out.write("\n");
+      out.write("            ");
       out.write(" \n");
       out.write("\n");
       out.write("<div class=\"center\">\n");
@@ -168,8 +166,32 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    };\n");
       out.write("</script>\n");
       out.write("\n");
-      out.write("                <br>\n");
-      out.write("                <br>\n");
+      out.write("            <br>\n");
+      out.write("            <br>\n");
+      out.write("            ");
+            String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
+                PreparedStatement pst = con.prepareStatement(sql);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+            
+      out.write("\n");
+      out.write("            ");
+      out.print(rs.getString(1));
+      out.write("\n");
+      out.write("            ");
+      out.print(rs.getString(2));
+      out.write("\n");
+      out.write("            ");
+      out.print(rs.getString(3));
+      out.write("\n");
+      out.write("            ");
+      out.print(rs.getString(4));
+      out.write("\n");
+      out.write("            ");
+out.println("<br>");
+                }
+            
+      out.write("\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
