@@ -24,7 +24,7 @@
                     <td>Name</td>
                     <td>pwd</td>
                 </tr>
-                <%                try {
+                <%                    try {
                         String q = "select * from login";
                         Statement pstmt = con.createStatement();
                         ResultSet rs = pstmt.executeQuery(q);
@@ -44,11 +44,51 @@
             <br>
             <br>
             <br>
+            <div class="center">
+                <div class="left">
+                    <center>
+                    <h1>Add Products</h1>        
+                    </center>
+                    <form method="post" id="frm1" action="addbackend.jsp" enctype="multipart/form-data">
+                        <div class="txtarea">
+                            <label for="pname" class="lbl">Name</label>
+                            <input type="text" id="pname" class="tb" placeholder="dinesh" name="pname">
+                        </div>
+                        <div class="txtarea">
+                            <label for="price" class="lbl">price</label>
+                            <input type="text" id="price" class="tb" name="price">
+                        </div>
+                        <div class="txtarea">
+                            <label for="pinfo" class="lbl">info</label>
+                            <input type="text" id="pinfo" class="tb" name="pinfo">
+                        </div>
+                        <div class="txtarea">
+                            <label for="p" class="lbl">file</label>
+                            <div class="tb">
+                                <input type="file" name="fileinput" class="tb" id="finput" multiple="true" accept=".jpg"/><br/>
+                            </div>
+                        </div>
+                        <center><input class="tb button" type="submit"></center>
+                    </form>
+                </div> 
+                <div class="right">
+                    <div class="c">
 
-            <%@include file="scripts/addproducts.jsp" %>
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40900.jpg" class="showimage" alt="">
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" class="showimage" alt="">
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" class="showimage" alt="">
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" class="showimage" alt="">
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" class="showimage" alt="">
+                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" class="showimage" alt="">
+                    </div>
+
+                </div>
+            </div>
+
             <br>
             <br>
-            <%            String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
+            <%
+                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
                 PreparedStatement pst = con.prepareStatement(sql);
                 ResultSet rs = pst.executeQuery();
                 while (rs.next()) {

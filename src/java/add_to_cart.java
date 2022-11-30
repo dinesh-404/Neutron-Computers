@@ -35,6 +35,8 @@ public class add_to_cart extends HttpServlet {
 
 
             /* TODO output your page here. You may use following sample code. */
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_Computers", "root", "");
             String session_id = "1";
             String id = request.getParameter("pid");
             String status = "added to cart";

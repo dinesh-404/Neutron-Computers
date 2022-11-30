@@ -31,8 +31,7 @@ public class chk_login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (
-                PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            PrintWriter out = response.getWriter()) {
             Class.forName("com.mysql.jdbc.Driver");
             String mail = request.getParameter("mail");
             String pwd = request.getParameter("pwd");
