@@ -47,7 +47,7 @@ h1 {
 .container {
   position: absolute;
   left: 140px;
-  top: 170px;
+  top: 260px;
   font-family: "Blinker";
   font-size: 50px;
   font-weight: 100;
@@ -97,7 +97,7 @@ a:hover {
 
   100% {
     opacity: 1;
-    top: 110px;
+    top: 230px;
   }
 }
 
@@ -128,7 +128,8 @@ a:hover {
 .cardmain {
   height: 600px;
   margin: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 20px;
 }
 
@@ -224,23 +225,28 @@ a:hover {
     top: -50px;
   }
 }
-.parts{
-    padding: 20px;
-    margin: 20px;
-    background:red;
-    font-size: 30px;
+.parts {
+  padding: 20px;
+  margin: 20px;
+  font-size: 30px;
 }
 .parts .text h1 {
-  font-family: "neor";
   font-size: 50px;
 }
-.parts p{
-    font-family: "Ubuntu";
-    width: 900px;
-    font-size: 25px;
+.parts p {
+  font-family: "Ubuntu";
+  width: 900px;
+  font-size: 25px;
 }
-.parts img{
-    width: 700px;
-    right: 0;
-    top: 0;
+.parts img {
+  width: 400px;
+  right: 0;
+  top: 0;
+}
+
+#processor{
+  width: 800px;
+  right: 0;
+  top: 0;
+
 }

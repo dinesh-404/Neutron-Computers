@@ -4,7 +4,7 @@ body{
     padding:0;
     font-family: "ubuntu";
     background: url("cssimg/mybg.jpg") no-repeat;    
-    background-size: auto 750px;
+    background-size: auto 950px;
     background-position-x: 907px;
     background-position-y: 0px;
     height: 100%;
@@ -17,10 +17,10 @@ body{
 .center{
     display: grid;
     grid-template-columns:1fr 500px;
-    width: 1280px;
+    width: 1400px;
     margin:auto;
     margin-top: 70px;
-    height:630px;
+    height:800px;
     border-radius: 20px;
     overflow: hidden;
     opacity: 1;

@@ -5,6 +5,7 @@ body{
 }
 .outline{
     background:url("cssimg/milad-fakurian-E8Ufcyxz514-unsplash.jpg");
+    background: black;
     background-size: cover; 
     background-position: center;
     position: fixed;
@@ -20,11 +21,11 @@ body{
     width: 90%;
     border-radius: 10px;
     display: grid;
-    grid-template-columns:500px 1fr;
+    grid-template-columns:650px 1fr;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .left{
-    height:550px;
+    height:750px;
     overflow: hidden;
 }
 .right{
@@ -40,8 +41,8 @@ body{
     margin: auto;
     margin-bottom: 20px; 
     backdrop-filter:blur(15px);
-    width: 350px;
-    height: 30px;
+    width: 400px;
+    height: 50px;
     border-radius: 5px;
     padding-left: 50px;  
     outline:none;
@@ -63,13 +64,13 @@ body{
     backdrop-filter:blur(50px);
 }
 .showimage{
-    max-height: 170px;
-    max-width: 1000px;
+    max-height: 240px;
+    max-width: 1200px;
     background:red;
 }
 .right{
     padding:30px;
-    padding-left: 150px;
+    
 }
 .left h1{
     margin-bottom: 70px;

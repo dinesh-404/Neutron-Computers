@@ -65,22 +65,22 @@
                         <div class="txtarea">
                             <label for="p" class="lbl">file</label>
                             <div class="tb">
-                                <input type="file" name="fileinput" class="tb" id="finput" multiple="true" accept=".jpg"/><br/>
+                                <input type="file" name="fileinput"  id="finput" multiple="true" accept=".jpg"/><br/>
                             </div>
                         </div>
                         <center><input class="tb button" type="submit"></center>
                     </form>
                 </div> 
                 <div class="right">
-                    <div class="c">
 
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40900.jpg" class="showimage" alt="">
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" class="showimage" alt="">
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" class="showimage" alt="">
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" class="showimage" alt="">
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" class="showimage" alt="">
-                        <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" class="showimage" alt="">
-                    </div>
+
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40900.jpg" class="showimage" alt="">
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" class="showimage" alt="">
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" class="showimage" alt="">
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" class="showimage" alt="">
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" class="showimage" alt="">
+                    <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" class="showimage" alt="">
+
 
                 </div>
             </div>
