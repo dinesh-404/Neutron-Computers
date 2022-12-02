@@ -47,15 +47,15 @@
 
             .mainimg {
                 margin: 50px;
-                width: 820px;
-                height: 520px;
+                width: 1200px;
+                height: 700px;
                 transition: all 1.5s;
                 opacity: 1;
                 border-radius: 5px;
             }
 
             .imgsmall {
-                margin-top: 70px;
+                margin-top: 170px;
             }
 
             .right {

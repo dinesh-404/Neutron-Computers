@@ -15,7 +15,7 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/scripts/connection.jsp");
-    _jspx_dependants.add("/navbar.html");
+    _jspx_dependants.add("/navbar.jsp");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -100,15 +100,15 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            .mainimg {\n");
       out.write("                margin: 50px;\n");
-      out.write("                width: 820px;\n");
-      out.write("                height: 520px;\n");
+      out.write("                width: 1200px;\n");
+      out.write("                height: 700px;\n");
       out.write("                transition: all 1.5s;\n");
       out.write("                opacity: 1;\n");
       out.write("                border-radius: 5px;\n");
       out.write("            }\n");
       out.write("\n");
       out.write("            .imgsmall {\n");
-      out.write("                margin-top: 70px;\n");
+      out.write("                margin-top: 170px;\n");
       out.write("            }\n");
       out.write("\n");
       out.write("            .right {\n");
@@ -179,16 +179,19 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');\r\n");
       out.write("\r\n");
       out.write("        .navmain {\r\n");
+      out.write("            position: absolute;\r\n");
+      out.write("            top:0;\r\n");
+      out.write("            width: 100%;\r\n");
+      out.write("            z-index: 5;\r\n");
       out.write("            font-family: \"Ubuntu Mono\";\r\n");
       out.write("            display: grid;\r\n");
       out.write("            padding-top: 5px;\r\n");
+      out.write("            background:white;\r\n");
       out.write("            grid-template-columns: 1fr 1fr 1fr;\r\n");
       out.write("            height: 50px;\r\n");
       out.write("            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;\r\n");
       out.write("        }\r\n");
       out.write("        .navcenter{\r\n");
-      out.write("            /* background:gray; */\r\n");
-      out.write("\r\n");
       out.write("            text-align: center;\r\n");
       out.write("            font-size: 30px;\r\n");
       out.write("        }\r\n");
@@ -219,12 +222,10 @@ public final class productinfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        }\r\n");
       out.write("    </style>\r\n");
       out.write("</head>\r\n");
-      out.write("\r\n");
       out.write("<body>\r\n");
       out.write("    <div class=\"navmain\">\r\n");
       out.write("        <div class=\"navleft\"><a href=\"\"><img class=\"logo\" src=\"css/cssimg/logo-final.png\" alt=\"\"></a></div>\r\n");
       out.write("        <div class=\"navcenter\">\r\n");
-      out.write("\r\n");
       out.write("            <a href=\"http://\">Home</a>\r\n");
       out.write("            <a href=\"http://\">Shop</a>\r\n");
       out.write("            <a href=\"http://\">Cart</a>\r\n");
