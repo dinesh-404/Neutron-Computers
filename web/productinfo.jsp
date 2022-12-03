@@ -15,7 +15,6 @@
             @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap');
-
             body {
                 /* font-family: "Ubuntu"; */
                 font-family: 'Staatliches', cursive;
@@ -23,19 +22,16 @@
                 margin: 0;
                 padding: 0;
             }
-
             .center {
                 height: 745px;
                 display: grid;
                 grid-template-columns: 1fr 500px;
             }
-
             .left {
                 display: grid;
                 grid-template-columns: 100px 1fr;
                 height: 700px;
             }
-
             .sideimg {
                 width: 100px;
                 height: 60px;
@@ -44,7 +40,6 @@
                 opacity: 1;
                 border-radius: 3px;
             }
-
             .mainimg {
                 margin: 50px;
                 width: 1200px;
@@ -53,22 +48,18 @@
                 opacity: 1;
                 border-radius: 5px;
             }
-
             .imgsmall {
                 margin-top: 170px;
             }
-
             .right {
                 padding: 5px;
             }
-
             .name {
                 font-size: 60px;
                 font-family: 'Staatliches', cursive;
                 /* color: rgb(0,0,0,0.9); */
                 letter-spacing: 2px;
             }
-
             .price {
                 position: absolute;
                 bottom: 170px;
@@ -76,7 +67,6 @@
                 font-family: 'Staatliches', cursive;
                 font-weight: 100;
             }
-
             .hide {
                 opacity: 0;
             }
@@ -92,7 +82,6 @@
                 font-family: 'Staatliches', cursive;
                 border-radius: 3px;
                 font-size: 20px;
-
             }
             .addtocart:hover{
                 background:black;
@@ -106,12 +95,10 @@
                 word-spacing: 2px;
                 letter-spacing: 1px;
             }
-
         </style>
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-
         <%            String a = "3";
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
@@ -128,7 +115,6 @@
                     %>
                     <img src="productimg/<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
                     <% }%>
-
                 </div>
                 <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>0.jpg" alt=""></div>
             </div>
