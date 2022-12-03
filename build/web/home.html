@@ -19,7 +19,7 @@
                 <a href="http://">Shop Now</a>
             </div>
         </center>
-        <img id="img" src="css/cssimg/omen.png" class="img a" alt="" srcset="">
+        <img id="img" src="css/cssimg/omen.png" class="img a" alt="">
         <br><br>
         <br><br><br><br>
         <br><br><br><br>
@@ -37,7 +37,7 @@
             </div>
             <img class="a featured" id="f" src="css/cssimg/origin-pc.jpg" alt="">
         </div>
-        <div class="cardmain r reveal" id="">
+        <div class="cardmain r reveal" id="jj">
             <div class="text a" id="txt">
                 <h2>Featured</h2>
                 <h1>intel Core i9 13900k</h1>
@@ -66,7 +66,7 @@
                     let pimg = document.getElementsByClassName("featured");
 
                     if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.remove("active");
+                        reveals[i].classList.add("active");
                         reveals[i].style.animation = "reveal .5s ease-in-out forwards";
                         pimg[i].style.animation = "fimage 1s ease-in-out forwards";
                         txt[i].style.animation = "featuredtxt 1s ease-in-out forwards";

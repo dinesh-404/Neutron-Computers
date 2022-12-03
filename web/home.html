@@ -19,13 +19,13 @@
                 <a href="http://">Shop Now</a>
             </div>
         </center>
-        <img id="img" src="css/cssimg/omen.png" class="img a" alt="" srcset="">
+        <img id="img" src="css/cssimg/omen.png" class="img a" alt="">
         <br><br>
         <br><br><br><br>
         <br><br><br><br>
         <br><br>
-        <div class="cardmain r reveal" id="reveal">
-            <div class="text a" id="txt">
+        <div class="cardmain r reveal" >
+            <div class="text a" >
                 <h2>Featured</h2>
                 <h1>Genesis by ORIGIN</h1>
                 <p>Origin PC is now a maker of very fine, high-end performance computers that are often better known as
@@ -35,20 +35,23 @@
                     Warcraft</p>
                 <button>Buy Now</button>
             </div>
-            <img class="a featured" id="f" src="css/cssimg/origin-pc.jpg" alt="">
+            <img class="a featured"  src="css/cssimg/origin-pc.jpg" alt="">
         </div>
-        <div class="cardmain r reveal" id="">
+        <br><br><br><br>
+
+        <div class="cardmain r reveal">
             <div class="text a" id="txt">
                 <h2>Featured</h2>
                 <h1>intel Core i9 13900k</h1>
                 <p>
                     The 13th Gen Intel® Core™ desktop processors deliver the next generation of breakthrough core performance. Now with up to 24 cores (8 Performance-cores and 16 Efficient-cores) and up to 32 threads.
-                    
-                </p>
+                </p><br><br>
                 <button>Buy Now</button>
             </div>
+            
             <img class="a featured" id="processor" src="css/cssimg/intel 13th gen-PhotoRoom.png" alt="">
         </div>
+        <br><br><br><br>
 
         <script>
             window.addEventListener("load", function () {
@@ -66,7 +69,7 @@
                     let pimg = document.getElementsByClassName("featured");
 
                     if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.remove("active");
+                        reveals[i].classList.add("active");
                         reveals[i].style.animation = "reveal .5s ease-in-out forwards";
                         pimg[i].style.animation = "fimage 1s ease-in-out forwards";
                         txt[i].style.animation = "featuredtxt 1s ease-in-out forwards";
