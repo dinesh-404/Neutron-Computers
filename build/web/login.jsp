@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/signup.css">
-        
-
         <title>Signup Page</title>
     </head>
     <body>
@@ -81,9 +78,10 @@
                 <form method="post" action="chk_login">
                     <div class="fields">
                         <div class="txtarea r">
-                            <input type="text" class="txtfield" name="mail" autofocus required>
+                            <input type="text" class="txtfield" name="mail" autofcode
+                                   ocus required>
                             <label class="label a">Enter Email</label>
-                        </div>
+                        </div> 
                         <div class="txtarea r">
                             <input type="password" class="txtfield" name="pwd" required>
                             <label class="label a">Enter Password</label>

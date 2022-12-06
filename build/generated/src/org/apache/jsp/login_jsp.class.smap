@@ -5,6 +5,10 @@ JSP
 *F
 + 0 login.jsp
 login.jsp
++ 1 navbar.jsp
+navbar.jsp
 *L
-1,131:44
+1,9:49
+1#1,72:58
+9#0,117:130
 *E
