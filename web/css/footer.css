@@ -4,78 +4,79 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @font-face {
-    font-family: "neob";
-    src: url("fonts/neo_sans_std_bold-webfont.woff2") format("woff2"),
-      url("fonts/neo_sans_std_bold-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "neol";
-    src: url("fonts/neo_sans_std_light-webfont.woff2") format("woff2"),
-      url("fonts/neo_sans_std_light-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "neor";
-    src: url("fonts/neo_sans_std_regular-webfont.woff2") format("woff2"),
-      url("fonts/neo_sans_std_regular-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "neob";
+  src: url("fonts/neo_sans_std_bold-webfont.woff2") format("woff2"),
+    url("fonts/neo_sans_std_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-body{
-    margin:0;
-    padding:0;
-    font-family: "Poppins";
+@font-face {
+  font-family: "neol";
+  src: url("fonts/neo_sans_std_light-webfont.woff2") format("woff2"),
+    url("fonts/neo_sans_std_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-.navbar{
-    width: 100%;
-    bottom: 0;
-    margin: 0;
-    display: grid;
-    background: rgb(97, 94, 94);
-    grid-template-columns: 1fr 1fr 1fr;
 
+@font-face {
+  font-family: "neor";
+  src: url("fonts/neo_sans_std_regular-webfont.woff2") format("woff2"),
+    url("fonts/neo_sans_std_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-.left{
-    font-size: 20px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
 }
-.left img{
-    height: 50px;
+.navbar {
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  margin-top: 100px;
+  display: grid;
+  background: rgb(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5px;
 }
-.imgwrapper{
+.left {
+  font-size: 20px;
+}
+.left img {
+  height: 50px;
+}
+.imgwrapper {
   position: absolute;
   right: 0;
 }
-.right img{
-    margin: 10px;
-    right: 0;
-    height: 40px;
-    width: 40px;
-    transition: all .2s;
+.right img {
+  margin: 10px;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s;
 }
-.left a{
+.left a {
   text-decoration: none;
   color: black;
-  transition: all .2s;
-
+  transition: all 0.2s;
 }
-.left a:hover{
+.left a:hover {
   color: white;
 }
-.right img:hover{
+.right img:hover {
   filter: invert();
+  background: black;
 }
-.center{
+.center {
   padding: 5px;
   text-align: center;
 }
-.txt{
+.txt {
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 55px;
 }

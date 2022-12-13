@@ -13,6 +13,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
         .navmain {
+
             position: absolute;
             top:0;
             width: 100%;
@@ -60,10 +61,10 @@
     <div class="navmain">
         <div class="navleft"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>
         <div class="navcenter">
-            <a href="http://">Home</a>
-            <a href="http://">Shop</a>
-            <a href="http://">Cart</a>
-            <a href="http://">About</a>
+            <a href="index.jsp">Home</a>
+            <a href="shop.jsp">Shop</a>
+            <a href="cart.jsp">Cart</a>
+            <a href="about.jsp">About</a>
         </div>
         <div class="navright"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>
     </div>
