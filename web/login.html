@@ -41,10 +41,13 @@
                             <div class="txtarea">
                                 <div class="txtfield">
                                     <label class="label rbtngroup">Gender</label>
-                                    <button type="button" id="mbtn" class="rbtn rbtngroup"
-                                            onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
-                                    <button type="button" id="fbtn" class="rbtn rbtngroup"
-                                            onclick="document.getElementById('female').click(); this.classList.add('click'); m.classList.remove('click');">Female</button>
+                                    <div class="radiobtns">
+
+                                        <button type="button" id="mbtn" class="rbtn rbtngroup"
+                                        onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
+                                        <button type="button" id="fbtn" class="rbtn rbtngroup"
+                                        onclick="document.getElementById('female').click(); this.classList.add('click'); m.classList.remove('click');">Female</button>
+                                    </div>
                                     <input hidden type="radio" id="male" name="gender" value="male">
                                     <input hidden type="radio" id="female" name="gender" value="female">
                                 </div>
@@ -57,7 +60,7 @@
                         <label class="label a">Address</label>
                     </div>
                     <center>
-                        <input type="submit" id="submitbt" value="Sign Up" class="submitbtn">
+                        <input type="button" id="submitbt" value="Sign Up" class="submitbtn">
                     </center>
                 </form>
             </div>

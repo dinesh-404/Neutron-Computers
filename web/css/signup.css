@@ -10,6 +10,7 @@ body{
     height: 100%;
     width: 100%;
 }
+
 .img{
     width: 45px;
     height:45px;
@@ -145,4 +146,48 @@ body{
     position: absolute;
     top: -5px;
     margin-left: 120px;
+}
+@media only screen and (max-width:600px) {
+    .center{
+        display: block;
+        width: unset;
+        height: unset;
+    }
+    .hide{
+        display: none;
+    }
+    .right h1,.text{
+        display: none;
+    }
+    .txtfield{
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+    }
+    .txtarea{
+        position: relative;
+    }
+    .label{
+        position: absolute;
+        z-index: 5;
+        top:0;
+    }
+    .left button{
+        padding: 10px;
+    }
+    .submitbtn{
+        width: 100%;
+    }
+    .right button{
+        width: 100%;
+    }
+    .radiobtns{
+        padding-left: 70px;
+    }
+    .radiobtns button{
+        width: 100px;
+    }
+    .signupform{
+        display: block;
+    }
 }
