@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -46,11 +40,9 @@ public class chk_login extends HttpServlet {
                 session.setAttribute("name", a.getString("username"));
                 out.println(a.getString("id"));
                 response.sendRedirect("index.jsp?err='logged in'");
-
             } else {
                 out.println(mail + pwd);
                 response.sendRedirect("login.jsp?err='please enter correct id and password'");
-
             }
         } catch (Exception e) {
             response.getWriter().println(e);
