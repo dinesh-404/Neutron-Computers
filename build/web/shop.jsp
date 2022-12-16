@@ -1,4 +1,4 @@
-<!-- <%-- 
+<%-- 
     Document   : shop
     Created on : 5 Dec, 2022, 12:01:01 PM
     Author     : Dinesh
@@ -16,21 +16,20 @@
     <body>
         <%@include file="navbar.jsp" %>
         <br><br><br>
+                <div class="row">
+
         <%  String sql = "select * from products";
             Class.forName("com.mysql.jdbc.Driver");
-            String mail = request.getParameter("mail");
-            String pwd = request.getParameter("pwd");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_Computers", "root", "");
-            PreparedStatement pst = con.prepareStatement("select * from products");
+            PreparedStatement pst = con.prepareStatement(sql);
             ResultSet a = pst.executeQuery();
+            while(a.next()){
         %>
-        <div class="row">
-            <% for (int i = 1; i < 6; i++) {%>
             <div class="card">
-                <h1>Origin-Pc</h1>
-                <img class="bimg" src="css/cssimg/origin-pc.jpg" alt="">
-                <div class="price">Price : 170,000 </div>
-                <button class="see-btn">See More</button>
+                <h1><%=a.getString("name")%></h1>
+                <img class="bimg" src="<%=a.getString("pimage")%>.jpg" alt="">
+                <div class="price">Price : <%=a.getString("price")%></div>
+                <button class="see-btn" onclick="location.href='productinfo.jsp?id=<%=a.getInt("id")%>'">See More </button>
             </div>
             <% }%>
         </div>
