@@ -99,12 +99,12 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
-        <%            String a = "3";
+        <%            String a = request.getParameter("id");
             String sql = "select * from products where id = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, a);
             ResultSet rs = pst.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
         %>
         <div class="center">
             <div class="left">
@@ -113,10 +113,10 @@
                         int i;
                         for (i = 1; i <= 5; i++) {
                     %>
-                    <img src="productimg/<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
+                    <img src="<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
                     <% }%>
                 </div>
-                <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>0.jpg" alt=""></div>
+                <div class="imgmain"><img class="mainimg" id="mainimg" src="<%=rs.getString("pimage")%>0.jpg" alt=""></div>
             </div>
             <div class="right">
                 <h1 class="name"><%=rs.getString("name")%></h1>
@@ -128,7 +128,11 @@
             </div>
         </div>
         <button class="addtocart" onclick="location.href = 'scripts/add_to_cart.jsp?pid=<%=rs.getString("id")%>'">Add to Cart</button>
-        <% }%>
+        <%
+            } else {
+                response.sendRedirect("shop.jsp");
+            }
+        %>
         <script src="javascript/imgchange.js"></script>
     </body>
 </html>

@@ -18,7 +18,7 @@
             <h1>Optical Computers</h1>
             one stop solution for all computing needs
             <br>
-            <a href="http://">Shop Now</a>
+            <a href="shop.jsp">Shop Now</a>
         </div>
     </center>
     <img id="img" src="css/cssimg/omen.png" class="img a" alt="">
