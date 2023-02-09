@@ -50,7 +50,6 @@
             </p><br><br>
             <button>Buy Now</button>
         </div>
-
         <img class="a featured" id="processor" src="css/cssimg/intel 13th gen-PhotoRoom.png" alt="">
     </div>
     <br><br><br><br>

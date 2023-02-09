@@ -35,9 +35,10 @@ body{
 .txtarea{
     width: 400px;
     margin: auto;
+    position: relative;
 }
 .tb{  
-    background: rgb(255,255,255,0.17);
+    background: rgb(0,0,0,0.2);
     margin: auto;
     margin-bottom: 20px; 
     backdrop-filter:blur(15px);
@@ -46,12 +47,14 @@ body{
     border-radius: 5px;
     padding-left: 50px;  
     outline:none;
+    font-size: 20px;
     border:none;
 }
 .lbl{
     margin:5px 0px 0px 5px;
     z-index: 5;
     position: absolute;
+    top:10px;
 }
 .button{
     width: 100px;
@@ -70,7 +73,7 @@ body{
 }
 .right{
     padding:30px;
-    
+
 }
 .left h1{
     margin-bottom: 70px;

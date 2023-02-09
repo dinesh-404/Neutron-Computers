@@ -13,34 +13,12 @@
         <link href="css/admin.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Page</title>
+
     </head>
     <body>
-        <div class="outline"></div>
+
         <div class="in">
-            <table border="2">
-                <tr><td colspan="3">click on row to delete it</td><tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>pwd</td>
-                </tr>
-                <%                    try {
-                        String q = "select * from login";
-                        Statement pstmt = con.createStatement();
-                        ResultSet rs = pstmt.executeQuery(q);
-                        while (rs.next()) {
-                %>
-                <tr class="tablerow" onclick="location.href = 'deletescript.jsp?id=<%=rs.getInt("id")%> '"> <td><%=rs.getString("id")%></td>
-                    <td class="tablec"><%=rs.getString("username")%></td>
-                    <td class="tablec"><%=rs.getString("password")%></td>
-                </tr>
-                <%
-                        }
-                    } catch (Exception e) {
-                        out.println(e);
-                    }
-                %>
-            </table>
+
             <br>
             <br>
             <br>
@@ -52,7 +30,7 @@
                     <form method="post" id="frm1" action="addbackend.jsp" enctype="multipart/form-data">
                         <div class="txtarea">
                             <label for="pname" class="lbl">Name</label>
-                            <input type="text" id="pname" class="tb" placeholder="dinesh" name="pname">
+                            <input type="text" id="pname" class="tb" name="pname">
                         </div>
                         <div class="txtarea">
                             <label for="price" class="lbl">price</label>
@@ -68,27 +46,21 @@
                                 <input type="file" name="fileinput"  id="finput" multiple="true" accept=".jpg"/><br/>
                             </div>
                         </div>
-                        <center><input class="tb button" type="submit"></center>
+                        <center><input class="tb button" type="submit" value="submit"></center>
                     </form>
                 </div> 
                 <div class="right">
-
-
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40900.jpg" class="showimage" alt="">
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40901.jpg" class="showimage" alt="">
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40902.jpg" class="showimage" alt="">
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40903.jpg" class="showimage" alt="">
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40904.jpg" class="showimage" alt="">
                     <img src="productimg/Nvdia RTX 4090/Nvdia RTX 40905.jpg" class="showimage" alt="">
-
-
                 </div>
             </div>
-
             <br>
             <br>
-            <%
-                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
+            <%                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
                 PreparedStatement pst = con.prepareStatement(sql);
                 ResultSet rs = pst.executeQuery();
                 while (rs.next()) {
@@ -100,8 +72,37 @@
             <%out.println("<br>");
                 }
             %>
-        </div>
+            <table border="2" >
+                <tr><td colspan="5">click on row to delete it</td><tr>
+                <tr>
+                    <td>id</td>
+                    <td>Name</td>
+                    <td>pwd</td>
+                                        <td>mobileno</td>
+                    <td>email</td>
 
+                </tr>
+                <%                    try {
+                        String q = "select * from login";
+                        Statement pstmt = con.createStatement();
+                        ResultSet ps = pstmt.executeQuery(q);
+                        while (ps.next()) {
+                %>
+                <tr class="tablerow" onclick="location.href = 'deletescript.jsp?id=<%=ps.getInt("id")%> '"> <td><%=ps.getString("id")%></td>
+                    <td class="tablec"><%=ps.getString("username")%></td>
+                    <td class="tablec"><%=ps.getString("password")%></td>
+                                        <td class="tablec"><%=ps.getString("mobileno")%></td>
+                    <td class="tablec"><%=ps.getString("email")%></td>
+
+                </tr>
+                <%
+                        }
+                    } catch (Exception e) {
+                        out.println(e);
+                    }
+                %>
+            </table>
+        </div>
         <script>
             let fileinput = document.getElementById('finput');
             let imgtag = document.getElementsByClassName('showimage');
@@ -120,6 +121,5 @@
             }
             };
         </script>
-
     </body>
 </html>
