@@ -1,5 +1,9 @@
 <%-- Document : mycart Created on : 5 Dec, 2022, 12:00:13 PM Author : Dinesh --%>
-
+<%
+    if(session.getAttribute("id")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="java.sql.*" %>
 <!DOCTYPE html>

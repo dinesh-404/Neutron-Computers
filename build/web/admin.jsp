@@ -3,7 +3,11 @@
     Created on : 16 Nov, 2022, 6:22:25 PM
     Author     : Dinesh
 --%>
-
+<%
+    if(session.getAttribute("id")==null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <%@include file="scripts/connection.jsp" %>
@@ -78,7 +82,7 @@
                     <td>id</td>
                     <td>Name</td>
                     <td>pwd</td>
-                                        <td>mobileno</td>
+                    <td>mobileno</td>
                     <td>email</td>
 
                 </tr>
@@ -91,7 +95,7 @@
                 <tr class="tablerow" onclick="location.href = 'deletescript.jsp?id=<%=ps.getInt("id")%> '"> <td><%=ps.getString("id")%></td>
                     <td class="tablec"><%=ps.getString("username")%></td>
                     <td class="tablec"><%=ps.getString("password")%></td>
-                                        <td class="tablec"><%=ps.getString("mobileno")%></td>
+                    <td class="tablec"><%=ps.getString("mobileno")%></td>
                     <td class="tablec"><%=ps.getString("email")%></td>
 
                 </tr>
