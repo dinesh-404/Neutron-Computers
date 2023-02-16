@@ -100,9 +100,13 @@ body{
     grid-template-columns:1fr 1fr;
 }
 .rbtngroup{
-    margin-top: 5px;
+    position: absolute;
+    
     border:none;
 
+}
+#r{
+    padding:20px;
 }
 #mbtn{
     border-radius:5px 0px 0px 5px;
@@ -111,7 +115,8 @@ body{
     margin-left:20px;
 }
 #fbtn{
-    margin-left:0;
+    margin-left:155px;
+    margin-right: 0px;
     background:rgb(255,255,255,0.5);
     border-radius:0px 5px 5px 0px;
 }
@@ -182,7 +187,8 @@ body{
         width: 100%;
     }
     .radiobtns{
-        padding-left: 70px;
+        padding-left: 150px;
+        background:red;
     }
     .radiobtns button{
         width: 100px;

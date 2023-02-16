@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -25,7 +26,7 @@ public class chk_login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (
-            PrintWriter out = response.getWriter()) {
+                PrintWriter out = response.getWriter()) {
             Class.forName("com.mysql.jdbc.Driver");
             String mail = request.getParameter("mail");
             String pwd = request.getParameter("pwd");
@@ -35,14 +36,19 @@ public class chk_login extends HttpServlet {
             pst.setString(2, pwd);
             ResultSet a = pst.executeQuery();
             if (a.next()) {
-                HttpSession session = request.getSession();
-                session.setAttribute("id", a.getString("id"));
-                session.setAttribute("name", a.getString("username"));
-                out.println(a.getString("id"));
-                response.sendRedirect("index.jsp?err='logged in'");
+                String acc = a.getString("access");
+                if (acc == "admin") {
+                    response.sendRedirect("admin.jsp");
+                } else{
+                    HttpSession session = request.getSession();
+                    session.setAttribute("id", a.getString("id"));
+                    session.setAttribute("name", a.getString("username"));
+                    out.println(a.getString("id"));
+                    response.sendRedirect("index.jsp?err='logged in'");
+                }
             } else {
                 out.println(mail + pwd);
-                response.sendRedirect("login.jsp?err='please enter correct id and password'");
+                response.sendRedirect("login.jsp?err=please enter correct id and password");
             }
         } catch (Exception e) {
             response.getWriter().println(e);

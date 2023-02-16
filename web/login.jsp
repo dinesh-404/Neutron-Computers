@@ -44,11 +44,10 @@
                                 <input type="text" class="txtfield inpt" required name="age">
                                 <label class="label a">Age</label>
                             </div>
-                            <div class="txtarea">
+                            <div class="txtarea" >
                                 <div class="txtfield">
                                     <label class="label rbtngroup">Gender</label>
                                     <div class="radiobtns">
-
                                         <button type="button" id="mbtn" class="rbtn rbtngroup"
                                         onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
                                         <button type="button" id="fbtn" class="rbtn rbtngroup"
