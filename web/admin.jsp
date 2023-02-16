@@ -4,7 +4,7 @@
     Author     : Dinesh
 --%>
 <%
-    
+
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
@@ -15,10 +15,11 @@
         <link href="css/admin.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Page</title>
+        
 
     </head>
     <body>
-
+        <%@include file="navbar.jsp" %>
         <div class="in">
 
             <br>
@@ -62,48 +63,84 @@
             </div>
             <br>
             <br>
-            <%                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
-                PreparedStatement pst = con.prepareStatement(sql);
-                ResultSet rs = pst.executeQuery();
-                while (rs.next()) {
-            %>
-            <%=rs.getString(1)%>
-            <%=rs.getString(2)%>
-            <%=rs.getString(3)%>
-            <%=rs.getString(4)%>
-            <%out.println("<br>");
-                }
-            %>
-            <table border="2" >
-                <tr><td colspan="5">click on row to delete it</td><tr>
-                <tr>
-                    <td>id</td>
-                    <td>Name</td>
-                    <td>pwd</td>
-                    <td>mobileno</td>
-                    <td>email</td>
+            <center>
+                <table>
 
-                </tr>
-                <%                    try {
-                        String q = "select * from login";
-                        Statement pstmt = con.createStatement();
-                        ResultSet ps = pstmt.executeQuery(q);
-                        while (ps.next()) {
-                %>
-                <tr class="tablerow" onclick="location.href = 'deletescript.jsp?id=<%=ps.getInt("id")%> '"> <td><%=ps.getString("id")%></td>
-                    <td class="tablec"><%=ps.getString("username")%></td>
-                    <td class="tablec"><%=ps.getString("password")%></td>
-                    <td class="tablec"><%=ps.getString("mobileno")%></td>
-                    <td class="tablec"><%=ps.getString("email")%></td>
+                    <tr class="tblheading">
+                    <h1>
+                        Total Sales
+                    </h1>
+                    </tr>
 
-                </tr>
-                <%
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                    <%                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
+                        PreparedStatement pst = con.prepareStatement(sql);
+                        ResultSet rs = pst.executeQuery();
+                        while (rs.next()) {
+                    %>
+
+                    <tr>
+                        <td class="tablec">
+                            <%=rs.getString(1)%>
+                        </td>
+                        <td class="tablec">
+                            <%=rs.getString(2)%>
+                        </td>
+                        <td class="tablec">
+                            <%=rs.getString(3)%>
+                        </td>
+                        <td class="tablec">
+                            <%=rs.getString(4)%>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+
+
+                <table border="2" >
+                    <tr class="tblheading">
+                    <h1>
+                        Accounts
+                    </h1>
+                    </tr>
+                    <tr>
+                        <th class="tblhead">Id</th>
+                        <th class="tblhead">Name</th>
+                        <th class="tblhead">Password</th>
+                        <th class="tblhead">Mobileno</th>
+                        <th class="tblhead">Email</th>
+
+                    </tr>
+                    <%                    try {
+                            String q = "select * from login";
+                            Statement pstmt = con.createStatement();
+                            ResultSet ps = pstmt.executeQuery(q);
+                            while (ps.next()) {
+                    %>
+                    <tr class="tablerow" onclick="location.href = 'deletescript'"> 
+                        <td class="tablec"><%=ps.getString("id")%></td>
+                        <td class="tablec"><%=ps.getString("username")%></td>
+                        <td class="tablec"><%=ps.getString("password")%></td>
+                        <td class="tablec"><%=ps.getString("mobileno")%></td>
+                        <td class="tablec"><%=ps.getString("email")%></td>
+
+                    </tr>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            out.println(e);
                         }
-                    } catch (Exception e) {
-                        out.println(e);
-                    }
-                %>
-            </table>
+                    %>
+                    <tr><td colspan="5">click on row to delete it</td><tr>
+
+                </table>
+            </center>
+
         </div>
         <script>
             let fileinput = document.getElementById('finput');
@@ -123,5 +160,6 @@
             }
             };
         </script>
+        
     </body>
 </html>

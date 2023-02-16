@@ -78,3 +78,18 @@ body{
 .left h1{
     margin-bottom: 70px;
 }
+.tablec{
+    padding: 25px;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.tblhead{
+    border:none;
+}
+table{
+    font-size: 30px;
+    border:none;
+    margin:20px;
+}
+
