@@ -15,7 +15,7 @@
 
     <center>
         <div class="container" id="container">
-            <h1>Optical Computers</h1>
+            <h1>Neutron Computers</h1>
             one stop solution for all computing needs
             <br>
             <a href="shop.jsp">Shop Now</a>

@@ -15,13 +15,10 @@
         <link href="css/admin.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Page</title>
-        
-
     </head>
     <body>
         <%@include file="navbar.jsp" %>
         <div class="in">
-
             <br>
             <br>
             <br>
@@ -78,7 +75,8 @@
                         <th>Product</th>
                         <th>Price</th>
                     </tr>
-                    <%                String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
+                    <%  
+                        String sql = "select lg.username , lg.email,p.name,p.price from login lg inner join cart c on lg.id = c.uid inner join products p on c.pid = p.id";
                         PreparedStatement pst = con.prepareStatement(sql);
                         ResultSet rs = pst.executeQuery();
                         while (rs.next()) {
