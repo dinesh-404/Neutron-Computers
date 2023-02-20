@@ -27,7 +27,7 @@
                     <center>
                         <h1>Add Products</h1>        
                     </center>
-                    <form method="post" id="frm1" action="addbackend.jsp" enctype="multipart/form-data">
+                    <form method="post" id="frm1" action="add_products" enctype="multipart/form-data">
                         <div class="txtarea">
                             <label for="pname" class="lbl">Name</label>
                             <input type="text" id="pname" class="tb" name="pname">
