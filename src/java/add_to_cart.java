@@ -37,9 +37,8 @@ public class add_to_cart extends HttpServlet {
             HttpSession session = request.getSession();
             String n = (String) session.getAttribute("id");
             if (n == null) {
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("login.jsp?err='please login first'");
             }
-
             else{
                 
             /* TODO output your page here. You may use following sample code. */
@@ -57,9 +56,9 @@ public class add_to_cart extends HttpServlet {
                 pst.setString(4, payment);
                 int i = pst.executeUpdate();
                 if (i > 0) {
-                    response.sendRedirect("../productinfo.jsp?alrt='Successfully added to cart'");
+                    response.sendRedirect("productinfo.jsp?id="+id+"&err='Successfully added to cart'");
                 } else {
-                    response.sendRedirect("../productinfo.jsp?alrt='could not add product to cart'");
+                    response.sendRedirect("productinfo.jsp?id"+id+"&err='could not add product to cart'");
                 }
             }
 

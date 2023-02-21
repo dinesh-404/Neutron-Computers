@@ -5,7 +5,10 @@
 --%>
 <%
     if(session.getAttribute("id")==null){
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("login.jsp?err='please login first'");
+    }
+    if(session.getAttribute("access")!="admin"){
+        response.sendRedirect("index.jsp?err='you need to be admin to access that page'");
     }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

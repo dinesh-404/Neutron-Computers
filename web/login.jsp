@@ -2,6 +2,10 @@
     if(session.getAttribute("id")!=null){
         response.sendRedirect("index.jsp");
     }
+    String alrt = request.getParameter("err");
+    if(alrt!=null){
+        out.println("<script>alert("+alrt+")</script>");
+    }
 %>
 
 <!DOCTYPE html>

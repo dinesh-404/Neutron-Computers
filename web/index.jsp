@@ -35,7 +35,7 @@
                 gaming,
                 and the people who can afford them likely have time for week long journeys through the World of
                 Warcraft</p>
-            <button>Buy Now</button>
+            <button onclick="location.href='shop.jsp'">Buy Now</button>
         </div>
         <img class="a featured"  src="css/cssimg/origin-pc.jpg" alt="">
     </div>
@@ -48,7 +48,7 @@
             <p>
                 The 13th Gen Intel® Core™ desktop processors deliver the next generation of breakthrough core performance. Now with up to 24 cores (8 Performance-cores and 16 Efficient-cores) and up to 32 threads.
             </p><br><br>
-            <button>Buy Now</button>
+            <button onclick="location.href='shop.jsp'">Buy Now</button>
         </div>
         <img class="a featured" id="processor" src="css/cssimg/intel 13th gen-PhotoRoom.png" alt="">
     </div>

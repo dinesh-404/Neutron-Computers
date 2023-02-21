@@ -6,73 +6,49 @@
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="java.sql.*" %>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cart</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="resources/css/imports.css">
+        <link rel="stylesheet" href="css/cart.css">
+        <title>My Cart</title>
     </head>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
+    <body>
+    <center>
+        <table class="CartTable">
 
-table.tbl {
-    width: 80%;
-    margin: 30px auto;
-    border-collapse: collapse;
-}
+            <tr>
+                <th colspan="4">
+                    <h1>My Cart</h1>
+                </th>
+            </tr>
+            <%
+                String uid = (String) session.getAttribute("id");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_computers", "root", "");
+                String sql = "select uc.id ,uc.status,uc.payment,p.name,p.price,p.pimage from cart uc inner join products p on p.id = uc.pid where uc.uid = ?";
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setString(1, "1");
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {%>
+            <tr class="CartRow" onclick="location.href = 'productinfo.jsp?id=<%=rs.getString("id")%>'">
+                <td class="cartimg"><img src="productimg/<%=rs.getString("pimage")%>1.jpg" alt="" srcset=""></td>
+                <td class="CartColumns">   <%=rs.getString("name")%> </td>
+                <td class="CartColumns"><%=rs.getString("price")%></td>
+                <td class="CartColumns"><a href="resources/phpscripts/delete_cart.php?pid=<?php echo $row['id']; ?>">Remove</a></td>
+            </tr>
+            <% }%>
 
-table.tbl td, table.tbl th {
-    border: 1px solid #333;
-    padding: 8px;
-}
+            <tr class="price">
+                <td class="CartColumns" colspan="2">Total</td>
+                <td class="CartColumms"> ₹<?php echo $sum;  ?></td>
+            </tr>
 
-table.tbl td.img {
-    width: 20%;
-}
-
-table.tbl img {
-    width: 100%;
-}
-
-table.tbl td {
-    text-align: center;
-}
-
-table.tbl a {
-    color: #333;
-    text-decoration: none;
-}
-
-        </style>
-        <body>
-            <table class="tbl">
-                <% String uid = request.getParameter("uid");
-                    Class.forName("com.mysql.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_computers", "root", "");
-                    String sql = "select uc.id ,uc.status,uc.payment,p.name,p.price,p.pimage from cart uc inner join products p on p.id = uc.pid where uc.uid = ?";
-                    PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, uid);
-                    ResultSet rs = pst.executeQuery();
-                    while (rs.next()) {%>
-                <tr>
-                    <td class="img">
-                        <img src="<%=rs.getString("pimage")%>0.jpg" alt="" srcset="">
-                    </td>
-                    <td>
-                        <%=rs.getString("name")%> 
-                    </td>
-                    <td>
-                        <%=rs.getString("payment")%>
-                    </td>
-                    <td>
-                        <%=rs.getString("price")%>
-                    </td>
-                    <td><a href="delete_cart?id=<%=rs.getString("id")%>">Remove</a></td>
-                </tr>  
-                <% }%>
-            </table>
-             </body>
-    </html>
+        </table>
+    </center>
+</body>
+</html>
