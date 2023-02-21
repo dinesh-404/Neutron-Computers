@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.sql.*;
 import java.util.*;
@@ -25,7 +24,7 @@ public class add_products extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -77,7 +76,7 @@ public class add_products extends HttpServlet {
                 pst.setString(4, itemPath);
                 int a = pst.executeUpdate();
                 if (a > 0) {
-                    out.println("Added products");
+                    response.sendRedirect("admin.jsp?err='added product'");
                 } else {
                     out.println("some error came");
                 }

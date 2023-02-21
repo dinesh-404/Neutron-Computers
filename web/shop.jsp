@@ -27,7 +27,7 @@
             <div class="card">
                 <h1><%=a.getString("name")%></h1>
                 <div class="price">Price : <%=a.getString("price")%></div>
-                <img class="bimg" src="<%=a.getString("pimage")%>1.jpg" alt="">
+                <img class="bimg" src="productimg/<%=a.getString("pimage")%>1.jpg" alt="">
                 <button class="see-btn" onclick="location.href = 'productinfo.jsp?id=<%=a.getInt("id")%>'">See More </button>
             </div>
             <% }%>

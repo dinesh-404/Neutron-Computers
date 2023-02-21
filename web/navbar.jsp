@@ -66,7 +66,17 @@
             <a href="cart.jsp">Cart</a>
             <a href="about.jsp">About</a>
         </div>
-        <div class="navright"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>
+        <!--<div class="navright"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>-->
+                <div class="navright"><% 
+                    
+                    if(session.getAttribute("id")!=null){
+                        out.println("logout");
+                    }
+                    else{
+                        out.println("login");
+                    }
+                    %></div>
+
     </div>
 </body>
 </html>

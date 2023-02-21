@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import javax.servlet.http.*;
+
 /**
  *
  * @author Dinesh
@@ -32,27 +34,35 @@ public class add_to_cart extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
+            String n = (String) session.getAttribute("id");
+            if (n == null) {
+                response.sendRedirect("login.jsp");
+            }
 
-
+            else{
+                
             /* TODO output your page here. You may use following sample code. */
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_Computers", "root", "");
-            String session_id = "1";
-            String id = request.getParameter("pid");
-            String status = "added to cart";
-            String payment = "not received";
-            String sql = "insert into cart (uid ,pid ,status ,payment ) values(?,?,?,?)";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, session_id);
-            pst.setString(2, id);
-            pst.setString(3, status);
-            pst.setString(4, payment);
-            int i = pst.executeUpdate();
-            if (i > 0) {
-                response.sendRedirect("../productinfo.jsp?alrt='Successfully added to cart'");
-            } else {
-                response.sendRedirect("../productinfo.jsp?alrt='could not add product to cart'");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_Computers", "root", "");
+                String session_id = "1";
+                String id = request.getParameter("pid");
+                String status = "added to cart";
+                String payment = "not received";
+                String sql = "insert into cart (uid ,pid ,status ,payment ) values(?,?,?,?)";
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setString(1, session_id);
+                pst.setString(2, id);
+                pst.setString(3, status);
+                pst.setString(4, payment);
+                int i = pst.executeUpdate();
+                if (i > 0) {
+                    response.sendRedirect("../productinfo.jsp?alrt='Successfully added to cart'");
+                } else {
+                    response.sendRedirect("../productinfo.jsp?alrt='could not add product to cart'");
+                }
             }
+
         } catch (Exception e) {
             response.getWriter().println(e);
         }

@@ -111,12 +111,12 @@
                 <div class="imgsmall">
                     <%
                         int i;
-                        for (i = 1; i <= 5; i++) {
+                        for (i = 2; i <= 6; i++) {
                     %>
-                    <img src="<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
+                    <img src="productimg/<%=rs.getString("pimage") + i%>.jpg" onclick="change(<%out.println(i - 1);%>)" class="sideimg" alt="">
                     <% }%>
                 </div>
-                <div class="imgmain"><img class="mainimg" id="mainimg" src="<%=rs.getString("pimage")%>0.jpg" alt=""></div>
+                <div class="imgmain"><img class="mainimg" id="mainimg" src="productimg/<%=rs.getString("pimage")%>1.jpg" alt=""></div>
             </div>
             <div class="right">
                 <h1 class="name"><%=rs.getString("name")%></h1>
@@ -127,7 +127,7 @@
                 <div class="price" >Price : <%=rs.getString("price")%>/-</div>
             </div>
         </div>
-        <button class="addtocart" onclick="location.href = 'scripts/add_to_cart.jsp?pid=<%=rs.getString("id")%>'">Add to Cart</button>
+        <button class="addtocart" onclick="location.href = 'add_to_cart?pid=<%=rs.getString("id")%>'">Add to Cart</button>
         <%
             } else {
                 response.sendRedirect("shop.jsp");
