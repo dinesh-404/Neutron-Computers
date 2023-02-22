@@ -1,6 +1,6 @@
 <%-- Document : mycart Created on : 5 Dec, 2022, 12:00:13 PM Author : Dinesh --%>
 <%
-    if(session.getAttribute("id")==null){
+    if (session.getAttribute("id") == null) {
         response.sendRedirect("login.jsp");
     }
 %>
@@ -22,7 +22,7 @@
         <table class="CartTable">
 
             <tr>
-                <th colspan="4">
+                <th colspan="5">
                     <h1>My Cart</h1>
                 </th>
             </tr>
@@ -32,20 +32,22 @@
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Optical_computers", "root", "");
                 String sql = "select uc.id ,uc.status,uc.payment,p.name,p.price,p.pimage from cart uc inner join products p on p.id = uc.pid where uc.uid = ?";
                 PreparedStatement pst = con.prepareStatement(sql);
-                pst.setString(1, "1");
+                pst.setString(1, uid);
                 ResultSet rs = pst.executeQuery();
                 while (rs.next()) {%>
             <tr class="CartRow" onclick="location.href = 'productinfo.jsp?id=<%=rs.getString("id")%>'">
                 <td class="cartimg"><img src="productimg/<%=rs.getString("pimage")%>1.jpg" alt="" srcset=""></td>
                 <td class="CartColumns">   <%=rs.getString("name")%> </td>
                 <td class="CartColumns"><%=rs.getString("price")%></td>
+                <td class="CartColumns"><%=rs.getString("status")%></td>
+
                 <td class="CartColumns"><a href="resources/phpscripts/delete_cart.php?pid=<?php echo $row['id']; ?>">Remove</a></td>
             </tr>
             <% }%>
 
             <tr class="price">
-                <td class="CartColumns" colspan="2">Total</td>
-                <td class="CartColumms"> ₹<?php echo $sum;  ?></td>
+                <td class="CartColumns" colspan="4">Checkout with Cash On Delivery</td>
+                <td class="CartColumms"><button onclick="location.href='order'">Check Out</button></td>
             </tr>
 
         </table>

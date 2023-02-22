@@ -1,13 +1,3 @@
-<%
-    if(session.getAttribute("id")!=null){
-        response.sendRedirect("index.jsp");
-    }
-    String alrt = request.getParameter("err");
-    if(alrt!=null){
-        out.println("<script>alert("+alrt+")</script>");
-    }
-%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,6 +6,15 @@
         <title>Signup Page</title>
     </head>
     <body>
+        <%
+            if (session.getAttribute("id") != null) {
+                response.sendRedirect("index.jsp");
+            }
+            String alrt = request.getParameter("err");
+            if (alrt!=null) {
+                out.println("<script>alert(" + alrt + ")</script>");
+            }
+        %>
         <%@include file="navbar.jsp" %>
         <div class="center" id="signupfrm">
             <div class="left">
@@ -53,9 +52,9 @@
                                     <label class="label rbtngroup">Gender</label>
                                     <div class="radiobtns">
                                         <button type="button" id="mbtn" class="rbtn rbtngroup"
-                                        onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
+                                                onclick="document.getElementById('male').click(); m.classList.add('click'); f.classList.remove('click');">Male</button>
                                         <button type="button" id="fbtn" class="rbtn rbtngroup"
-                                        onclick="document.getElementById('female').click(); this.classList.add('click'); m.classList.remove('click');">Female</button>
+                                                onclick="document.getElementById('female').click(); this.classList.add('click'); m.classList.remove('click');">Female</button>
                                     </div>
                                     <input hidden type="radio" id="male" name="gender" value="male">
                                     <input hidden type="radio" id="female" name="gender" value="female">
@@ -115,22 +114,23 @@
         </div>
         <script src="javascript/validation.js"></script>
         <script>
-                                                // these variables are used in with html dont delete it
-                                                let m = document.getElementById("mbtn");
-                                                        let f = document.getElementById("fbtn");
-                                                        let submitbtn = document.getElementById("submitbtn");
-                                                        let
-                                                signupfrm = document.getElementById("signupfrm");
-                                                        let
-                                                loginbtn = document.getElementById("loginbtn");
-                                                submitbtn.addEventListener("mousedown", function () {
-                                                    signupfrm.classList.add("hide");
-                                                    loginfrm.classList.remove("hide");
-                                                });
-                                                loginbtn.addEventListener("mousedown", function () {
-                                                    signupfrm.classList.remove("hide");
-                                                    loginfrm.classList.add("hide");
-                                                });
+                                                    // these variables are used in with html dont delete it
+                                                    let m = document.getElementById("mbtn");
+                                                            let f = document.getElementById("fbtn");
+                                                            let
+                                                    submitbtn = document.getElementById("submitbtn");
+                                                            let
+                                                    signupfrm = document.getElementById("signupfrm");
+                                                    let
+                                                    loginbtn = document.getElementById("loginbtn");
+                                                    submitbtn.addEventListener("mousedown", function () {
+                                                        signupfrm.classList.add("hide");
+                                                        loginfrm.classList.remove("hide");
+                                                    });
+                                                    loginbtn.addEventListener("mousedown", function () {
+                                                        signupfrm.classList.remove("hide");
+                                                        loginfrm.classList.add("hide");
+                                                    });
         </script>
     </body>
 </html>

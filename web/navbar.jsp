@@ -1,11 +1,4 @@
 !DOCTYPE html>
-
-<%
-String alrt = request.getParameter("err");
-if(alrt!=null){
-out.println("<script>alert("+alrt+")</script>");
-}
-%>
 <html lang="en">
 
     <head>
@@ -71,7 +64,7 @@ out.println("<script>alert("+alrt+")</script>");
                 <a href="index.jsp">Home</a>
                 <a href="shop.jsp">Shop</a>
                 <a href="cart.jsp">Cart</a>
-                <a href="about.jsp">About</a>
+             
             </div>
             <!--<div class="navright"><a href=""><img class="logo" src="css/cssimg/logo-final.png" alt=""></a></div>-->
             <div class="navright"><%

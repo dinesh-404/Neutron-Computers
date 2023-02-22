@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +7,8 @@
         <link href="css/home.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
         <title>home-page</title>
-
-
     <body>
         <%@include file="navbar.jsp" %>
-
     <center>
         <div class="container" id="container">
             <h1>Neutron Computers</h1>
@@ -40,7 +36,6 @@
         <img class="a featured"  src="css/cssimg/origin-pc.jpg" alt="">
     </div>
     <br><br><br><br>
-
     <div class="cardmain r reveal">
         <div class="text a" id="txt">
             <h2>Featured</h2>
@@ -86,7 +81,5 @@
 
     </script>
     <%@include file="footer.html" %>
-
 </body>
-
 </html>
